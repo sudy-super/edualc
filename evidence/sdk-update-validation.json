@@ -1,0 +1,23 @@
+{
+  "command": "edualc update",
+  "sdk": "0.3.302",
+  "installedPackage": "/Users/rakuto/.local/share/edualc/sdk/versions/0.3.302/node_modules/@anthropic-ai/claude-agent-sdk",
+  "tuiExecutable": "/Users/rakuto/.local/share/claude/versions/2.1.302",
+  "sdkExecutable": "/Users/rakuto/.local/share/edualc/sdk/versions/0.3.302/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+  "verification": {
+    "pass": true,
+    "checks": [
+      "TUI Bun runtime and SDK loader",
+      "conversation",
+      "canUseTool and Write",
+      "generateSessionTitle",
+      "askSideQuestion",
+      "compact boundary",
+      "persisted conversation and compact history"
+    ],
+    "requests": 6
+  },
+  "authMethod": "api_key",
+  "configDirectory": "/Users/rakuto/.claude",
+  "scheduledUpdateRegistered": false
+}

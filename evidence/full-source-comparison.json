@@ -1,0 +1,18 @@
+{
+  "verified_files": 2695,
+  "changed_files": [
+    "chunk-hqtnbrjd.js",
+    "chunk-1svntv7y.js",
+    "chunk-v79yvp1y.js",
+    "chunk-b6hzxg02.js",
+    "chunk-bhpwzt8n.js",
+    "chunk-emqg0p7z.js",
+    "chunk-swjk3jdr.js",
+    "chunk-m7gqkrhq.js",
+    "chunk-e759yekb.js",
+    "chunk-6mb4af0f.js"
+  ],
+  "ui_component_changes": 0,
+  "allowed_change": "Declared conversation, compact, title, side-question and helper connection boundaries",
+  "binary_sha256": "5262ce9de86243fed0d21edc39b271555d56780d0112e2b194439fe1c6662d37"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "edualc",
+  "ui_flow_artifact": "../test/artifacts/sdk-final-native-history-flow.json",
+  "parent_session": "fc43da75-f530-4e04-832b-420b1e153213",
+  "sdk_children": [
+    "28660827-fbef-4a35-8a4f-dd1635875e95"
+  ],
+  "successful_sdk_results": 4,
+  "compact_boundary_observed": true,
+  "continuation_reply": "APPLE_1807 VERIFIED_1807",
+  "side_question_reply": "APPLE_1807 SIDE_1807",
+  "parent_model_requests_detected": 0,
+  "sdk_title_completion_probe": "../test/artifacts/sdk-completion-probe.json",
+  "snapshot_reader": "Original Claude Code UZ/twr reads the SDK-persisted transcript, including attachments"
+}

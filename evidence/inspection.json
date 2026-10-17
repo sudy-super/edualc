@@ -1,0 +1,42 @@
+{
+  "target": {
+    "path": "/Users/rakuto/.local/share/claude/versions/2.1.302",
+    "version": "2.1.302",
+    "sha256": "5262ce9de86243fed0d21edc39b271555d56780d0112e2b194439fe1c6662d37"
+  },
+  "rea": {
+    "open_binary": "confirmed mach-o arm64 and SHA-256",
+    "native_analysis": "provider_unavailable: Ghidra, Hopper and IDA not configured",
+    "close_binary": "client rejected: MCP tool call requires approval, but approval policy is never; no analysis database was opened"
+  },
+  "source_inspection": {
+    "method": "Mach-O and embedded Bun metadata parsed locally; TypeScript AST dependency graph",
+    "segment": {
+      "offset": 91209728,
+      "size": 175964160,
+      "base": 91209736,
+      "table_offset": 266999356
+    },
+    "embedded_file_count": 2705,
+    "selected_file_count": 2695,
+    "manifest": "../vendor/claude-full/manifest.json"
+  },
+  "runtime": {
+    "native_bun_version": "1.4.4",
+    "cell_segmenter": "function",
+    "standard_bun": "1.3.5 missing Bun.ant.CellSegmenter",
+    "launch": "BUN_OPTIONS=--preload=<bootstrap.mjs>, then remove BUN_OPTIONS before starting the SDK child"
+  },
+  "verification": {
+    "unit_typescript": 42,
+    "unit_python": 21,
+    "source_comparison": "2695 files verified; 10 declared backend connection files changed; no UI component changes",
+    "model_menu": "native and extracted SDK-connected CLI terminal screens identical with compiled catalog fixture",
+    "live_reply": "ORIGINAL_TUI_SDK_OK",
+    "live_tool_permission": "Original local Write approval -> file content ORIGINAL_PERMISSION_OK -> ORIGINAL_PERMISSION_DONE",
+    "history": "Completed UI conversation resumed via --resume, recalled APPLE_1762; SDK result success verified. Interrupted history synthetic fork point persisted through native Ov; subsequent model response was a provider refusal.",
+    "auxiliary": "SDK title/completion/structured output/fork probes passed; original TUI compact, continuation and side question passed with parent model API audit"
+  },
+  "scope": "Original TUI retained. Conversation, manual compact, title generation, side questions, single tool-free completion and selected UI tool-free forks run through Agent SDK. Main SDK sessions use standard persistence; original Claude Code transcript readers include retained attachments.",
+  "name": "edualc"
+}

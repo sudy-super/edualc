@@ -1,0 +1,10 @@
+#!/bin/zsh
+set -eu
+app_dir="${0:A:h:h}"
+if [[ "${1-}" == "update" ]]; then
+  shift
+  exec python3 "$app_dir/scripts/update-sdk.py" "$@"
+fi
+export EDUALC_REQUIRE_PROXY=1
+export LITELLM_CLAUDE_BIN="$app_dir/bin/edualc-direct"
+exec /bin/zsh "$HOME/.litellm/claude-launch.sh" "$@"

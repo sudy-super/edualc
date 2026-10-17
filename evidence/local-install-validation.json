@@ -1,0 +1,10 @@
+{
+  "repository": "/Users/rakuto/Documents/edualc",
+  "installed_command": "/Users/rakuto/.local/share/edualc/versions/2.1.302/bin/edualc",
+  "repository_absent_during_verification": true,
+  "version": "2.1.302 (Claude Code)",
+  "authMethod": "api_key",
+  "apiKeySource": "ANTHROPIC_API_KEY",
+  "configDirectory": "/Users/rakuto/.claude",
+  "projectsDirectory": "/Users/rakuto/.claude/projects"
+}

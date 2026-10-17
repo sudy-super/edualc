@@ -1,0 +1,5 @@
+node_modules/
+vendor/
+evidence/original/
+test/artifacts/
+__pycache__/

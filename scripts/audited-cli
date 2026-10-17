@@ -1,0 +1,5 @@
+#!/bin/zsh
+set -eu
+app_dir="${0:A:h:h}"
+export BUN_OPTIONS="--preload=$app_dir/scripts/audit-parent-api.mjs"
+exec "$HOME/.local/share/claude/versions/2.1.302" "$@"
