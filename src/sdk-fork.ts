@@ -1,9 +1,10 @@
+import { loadNativeModule } from './claude';
 import { randomUUID } from 'node:crypto';
 import { appendFileSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import type { Options, SDKMessage, SDKUserMessage } from '@anthropic-ai/claude-agent-sdk';
-import { query, sdkExecutable } from './sdk';
+import { query, sdkExecutable, sdkEnvironment, sdkSettings } from './sdk';
 import { toInternal } from './sdk-run';
 
 type Row = Record<string, any>;
@@ -36,6 +37,7 @@ interface Helpers {
 }
 interface Dependencies {
   queryFactory?: typeof query;
+  convertMessages?: Parameters<typeof toInternal>[1];
   helpers?: () => Promise<Helpers>;
   tempRoot?: string;
   executable?: string;
@@ -45,7 +47,7 @@ interface Dependencies {
 const supported = new Set(['away_summary', 'prompt_suggestion', 'rename_generate_name', 'agent_summary']);
 const emptyUsage = () => ({ input_tokens: 0, output_tokens: 0, cache_creation_input_tokens: 0, cache_read_input_tokens: 0, cache_creation: { ephemeral_1h_input_tokens: 0, ephemeral_5m_input_tokens: 0 }, service_tier: null });
 async function originalHelpers(): Promise<Helpers> {
-  return await import(new URL('../vendor/claude-full/chunk-hqtnbrjd.js', import.meta.url).href) as Helpers;
+  return await loadNativeModule('chunk-hqtnbrjd.js') as Helpers;
 }
 function traceFile(event: Row): void {
   if (process.env.EDUALC_TRACE !== '1') return;
@@ -94,9 +96,10 @@ export function createSdkToolFreeFork(dependencies: Dependencies = {}) {
         ...(records.length ? { resume: path, forkSession: true } : {}),
         systemPrompt: system.join('\n\n'), model: context.model ?? params.overrides?.options?.mainLoopModel ?? context.toolUseContext.options.mainLoopModel,
         tools: [], mcpServers: {}, strictMcpConfig: true, settingSources: [],
+        settings: sdkSettings({}, dependencies.env),
         maxTurns: params.maxTurns ?? 50,
         abortController: controller, includePartialMessages: true,
-        env: { ...(dependencies.env ?? process.env), BUN_OPTIONS: undefined, ...(params.maxOutputTokens !== undefined ? { CLAUDE_CODE_MAX_OUTPUT_TOKENS: String(params.maxOutputTokens) } : {}) },
+        env: { ...sdkEnvironment(dependencies.env), ...(params.maxOutputTokens !== undefined ? { CLAUDE_CODE_MAX_OUTPUT_TOKENS: String(params.maxOutputTokens) } : {}) },
         canUseTool: async () => { throw new Error('A tool-free SDK fork attempted to use a tool'); },
       };
       async function* input(): AsyncGenerator<SDKUserMessage> {
@@ -117,7 +120,7 @@ export function createSdkToolFreeFork(dependencies: Dependencies = {}) {
           continue;
         }
         if (event.type === 'assistant' && event.message.content.some(block => block.type === 'tool_use')) throw new Error('A tool-free SDK fork emitted a tool call');
-        const row = toInternal(event as SDKMessage);
+        const row = await toInternal(event as SDKMessage, dependencies.convertMessages);
         if (!row) continue;
         if (row.type === 'stream_event') params.onStreamDelta?.(row);
         else if (row.type === 'assistant' || row.type === 'user') {

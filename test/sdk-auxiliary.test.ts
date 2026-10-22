@@ -31,6 +31,21 @@ function sideParams(): SideQuestionParams {
 }
 
 describe('SDK auxiliary controls', () => {
+  test('logs a failed title request and returns null like the native title generator', async () => {
+    const failure = new Error('title provider unavailable');
+    const sdk = control({ async generateSessionTitle() { throw failure; } });
+    const logged: unknown[] = [];
+    const bridge = createSdkAuxiliary({ getConnection: async () => sdk.connection,
+      queryFactory: () => sdk.connection, logTitleError: error => { logged.push(error); } });
+    expect(await bridge.generateTitle('Please generate a conversation title')).toBeNull();
+    expect(logged).toEqual([failure]);
+    expect(sdk.closed).toBe(1);
+    const startup = createSdkAuxiliary({ getConnection: async () => sdk.connection,
+      titleSettings: async () => { throw failure; }, logTitleError: error => { logged.push(error); } });
+    expect(await startup.generateTitle('Please generate another conversation title')).toBeNull();
+    expect(logged).toEqual([failure, failure]);
+  });
+
   test('generates titles with the SDK method, without another tool or settings connection', async () => {
     const sdk = control();
     const starts: Parameters<NonNullable<Configuration['queryFactory']>>[0][] = [];

@@ -49,7 +49,7 @@ globalThis.fetch = Object.assign(async (...args) => {
   }
   return actualFetch(...args);
 }, actualFetch);
-const root = new URL('../vendor/claude-full/', import.meta.url);
+const root = new URL('file:///$bunfs/root/');
 let complete, auxiliary;
 const result = { checks: [], requests, parentModelRequests, blockedParentFetches };
 const timer = setTimeout(() => { console.error('Local completion probe timed out'); process.exit(1); }, 60000);

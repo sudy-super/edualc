@@ -1,5 +1,6 @@
+import { loadNativeModule } from './claude';
 import type { Options, Query, SDKUserMessage } from '@anthropic-ai/claude-agent-sdk';
-import { query, sdkExecutable } from './sdk';
+import { query, sdkExecutable, sdkEnvironment, sdkSettings } from './sdk';
 import type { RunParams } from './sdk-run';
 
 interface SideExchange { question: string; response: string; fallbackNotice?: string }
@@ -41,6 +42,7 @@ interface Dependencies {
   getConnection(params: RunParams): Promise<Query>;
   titleSettings?(): Promise<Pick<Options, 'model' | 'settings'>>;
   executable?: string;
+  logTitleError?(error: unknown): void | Promise<void>;
 }
 
 function auxiliary(connection: Query): AuxiliaryQuery {
@@ -62,36 +64,40 @@ export function createSdkAuxiliary(dependencies: Dependencies) {
   async function generateTitle(description: string, signal?: AbortSignal, _credentials?: unknown): Promise<string | null> {
     if (signal?.aborted || description.trim().length < 10) return null;
     const controller = new AbortController();
-    const settings = await dependencies.titleSettings?.();
-    if (signal?.aborted) return null;
-    const connection = (dependencies.queryFactory ?? query)({
-      prompt: idleInput(controller.signal),
-      options: {
-        ...settings,
-        settings: { ...(typeof settings?.settings === 'object' ? settings.settings : {}), disableAllHooks: true },
-        pathToClaudeCodeExecutable: dependencies.executable ?? sdkExecutable(),
-        env: { ...process.env, BUN_OPTIONS: undefined },
-        settingSources: [], strictMcpConfig: true, mcpServers: {}, tools: [],
-        persistSession: false, abortController: controller,
-      },
-    });
-    titleChildren.add(connection);
-    const stop = () => { controller.abort(); connection.close(); };
+    let connection: Query | undefined;
+    const stop = () => { controller.abort(); connection?.close(); };
     signal?.addEventListener('abort', stop, { once: true });
     try {
-      const method = auxiliary(connection).generateSessionTitle.bind(connection);
-      try {
-        const title = await method(description, { persist: false });
-        return signal?.aborted ? null : title;
-      } catch (error) {
-        if (signal?.aborted) return null;
-        throw error;
+      const settings = await dependencies.titleSettings?.();
+      if (signal?.aborted) return null;
+      connection = (dependencies.queryFactory ?? query)({
+        prompt: idleInput(controller.signal),
+        options: {
+          ...settings,
+          settings: sdkSettings({ ...(typeof settings?.settings === 'object' ? settings.settings : {}), disableAllHooks: true }),
+          pathToClaudeCodeExecutable: dependencies.executable ?? sdkExecutable(),
+          env: sdkEnvironment(),
+          settingSources: [], strictMcpConfig: true, mcpServers: {}, tools: [],
+          persistSession: false, abortController: controller,
+        },
+      });
+      titleChildren.add(connection);
+      const title = await auxiliary(connection).generateSessionTitle(description, { persist: false });
+      return signal?.aborted ? null : title;
+    } catch (error) {
+      if (!signal?.aborted) {
+        if (dependencies.logTitleError) await dependencies.logTitleError(error);
+        else {
+          const log = await loadNativeModule('chunk-s093jfzw.js');
+          log.t(`generateSessionTitle failed: ${error}`, { level: 'error' });
+        }
       }
+      return null;
     } finally {
       signal?.removeEventListener('abort', stop);
       controller.abort();
-      connection.close();
-      titleChildren.delete(connection);
+      connection?.close();
+      if (connection) titleChildren.delete(connection);
     }
   }
 
@@ -140,7 +146,7 @@ const bridge = createSdkAuxiliary({
     return main.getSdkConnection(params);
   },
   titleSettings: async () => {
-    const settings = await import(new URL('../vendor/claude-full/chunk-1pjd7qsk.js', import.meta.url).href);
+    const settings = await loadNativeModule('chunk-1pjd7qsk.js');
     return { settings: { language: settings.ut().language } };
   },
 });

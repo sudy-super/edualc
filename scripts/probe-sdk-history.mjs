@@ -38,7 +38,7 @@ const nonce = `memory-${randomUUID()}`;
 const marker = `QUESTION_${randomUUID().replaceAll('-', '')}`;
 const evidence = { parentId, checks: [], events: [] };
 const common = {
-  pathToClaudeCodeExecutable: process.execPath,
+  pathToClaudeCodeExecutable: (await import('../src/sdk.ts')).sdkExecutable(),
   cwd, model: 'claude-opus-5', settingSources: [], tools: [],
   systemPrompt: 'Answer the requested exact text. Do not use tools.',
   env: { ...process.env, BUN_OPTIONS: undefined },

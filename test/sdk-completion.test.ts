@@ -24,7 +24,7 @@ function fixture(events: Record<string, any>[] = [assistant('Native answer'), re
       starts.push(params);
       return Object.assign((async function* () {
         if (typeof params.prompt !== 'string') for await (const input of params.prompt) inputs.push(input);
-        for (const event of events) yield event as SDKMessage;
+        for (const event of events) { if (event instanceof Error) throw event; yield event as SDKMessage; }
       })(), { close() { closed++; } }) as Query;
     },
     executable: '/native/claude', env: { BUN_OPTIONS: '--preload=parent', ANTHROPIC_AUTH_TOKEN: 'inherited-token' }, trace() {},
@@ -33,6 +33,20 @@ function fixture(events: Record<string, any>[] = [assistant('Native answer'), re
 }
 
 describe('single tool-free SDK completions', () => {
+  test('keeps probe model, one-token limit, and API error status without using the helper model', async () => {
+    const sdk = fixture();
+    await sdk.complete({ userPrompt: 'Hi', systemPrompt: [], options: { maxOutputTokensOverride: 1, maxRetries: 0 } }, 'probe-model');
+    expect(sdk.starts[0].options!.model).toBe('probe-model');
+    expect(sdk.starts[0].options!.env).toMatchObject({ CLAUDE_CODE_MAX_OUTPUT_TOKENS: '1', CLAUDE_CODE_MAX_RETRIES: '0' });
+    const failed = fixture([result({ is_error: true, result: 'Unauthorized', api_error_status: 401 })]);
+    const failure = await failed.complete({ userPrompt: 'Hi', options: {} }, 'probe-model').catch(error => error);
+    expect(failure.status).toBe(401);
+    expect(failed.closed).toBe(1);
+    const exited = fixture([{ ...assistant('Authentication failed'), api_error_status: 401 }, new Error('SDK exited')]);
+    const exitError = await exited.complete({ userPrompt: 'Hi', options: {} }, 'probe-model').catch(error => error);
+    expect(exitError.status).toBe(401);
+  });
+
   test('preserves system blocks and literal input, uses the native helper model, and disables tool execution', async () => {
     const sdk = fixture();
     const answer = await sdk.complete({

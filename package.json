@@ -7,10 +7,14 @@
     "update:sdk": "python3 scripts/update-sdk.py",
     "start": "./bin/edualc",
     "start:direct": "./bin/edualc-direct",
-    "test": "bun test && python3 test/extract.test.py && python3 test/extract-full.test.py && python3 test/auth.test.py && python3 test/update-sdk.test.py && python3 scripts/verify-source.py",
+    "test": "bun test && python3 test/native-layout.test.py && python3 test/build-native.test.py && python3 test/auth.test.py && python3 -I -S test/credit-balance.test.py && python3 test/update-sdk.test.py && python3 scripts/build-native.py --verify",
+    "test:flow": "uv run --no-project scripts/verify-native-flow.py",
     "test:tui": "uv run --no-project scripts/verify-tui.py",
-    "extract": "python3 scripts/extract-full.py",
-    "check": "tsc --noEmit"
+    "test:fullscreen": "uv run --no-project scripts/verify-fullscreen.py",
+    "test:background": "uv run --no-project scripts/verify-background.py",
+    "extract": "python3 scripts/build-native.py",
+    "check": "tsc --noEmit",
+    "test:context": "uv run --no-project scripts/verify-context.py"
   },
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "0.3.302"

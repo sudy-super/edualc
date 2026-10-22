@@ -13,4 +13,5 @@ globalThis.fetch = new Proxy(globalThis.fetch, {
     return Reflect.apply(target, receiver, args);
   },
 });
-await import('../bootstrap.mjs');
+const { pathToFileURL } = await import('node:url');
+await import(process.env.EDUALC_AUDIT_APP_ROOT ? pathToFileURL(`${process.env.EDUALC_AUDIT_APP_ROOT}/bootstrap.mjs`).href : '../bootstrap.mjs');

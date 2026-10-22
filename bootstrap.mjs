@@ -1,38 +1,43 @@
-// SDK の子プロセスが同じ preload を実行しないよう、起動直後に取り除く。
+// SDK の子プロセスに preload を引き継がせない。
+const preloadOptions = process.env.BUN_OPTIONS;
 delete process.env.BUN_OPTIONS;
-let closeSdkRuns;
 try {
-  const { readFileSync } = await import('node:fs');
-  const { createHash } = await import('node:crypto');
-  const digest = createHash('sha256').update(readFileSync(process.execPath)).digest('hex');
-  if (digest !== '5262ce9de86243fed0d21edc39b271555d56780d0112e2b194439fe1c6662d37') {
-    throw new Error('対応していない Claude Code です。2.1.302 の実行ファイルが必要です。');
-  }
+  const { readFileSync, realpathSync } = await import('node:fs');
   if (typeof Bun.ant?.CellSegmenter !== 'function') throw new Error('Claude Code の組み込み実行環境が必要です。');
   if (process.env.EDUALC_REQUIRE_PROXY === '1' && process.env.CLAUDE_LITELLM_MODE !== 'proxy') {
     throw new Error('LiteLLM に接続できません。直接接続への切り替えは行いません。');
   }
-  const { fileURLToPath } = await import('node:url');
-  const root = new URL('./vendor/claude-full/', import.meta.url);
-  const manifest = JSON.parse(readFileSync(new URL('manifest.json', root), 'utf8'));
-  if (!manifest.sdk_adapter) throw new Error('SDK への接続を含む TUI の抽出を実行してください。');
-  for (const file of manifest.files.filter(file => file.selected)) {
-    const content = readFileSync(new URL(file.relative_path, root));
-    if (createHash('sha256').update(content).digest('hex') !== file.derived_sha256) {
-      throw new Error(`抽出したファイルが変更されています: ${file.relative_path}`);
-    }
+  const manifest = JSON.parse(readFileSync(new URL('./native/manifest.json', import.meta.url), 'utf8'));
+  if (manifest.schema_version !== 2 || manifest.engine !== 'sdk' || !manifest.symbols || !manifest.sdk_adapter || realpathSync(process.execPath) !== manifest.native_binary) {
+    throw new Error('SDK 接続版の実行ファイルを生成・インストールしてください。');
   }
-  const [main, auxiliary, completion] = await Promise.all([
+  const { fileURLToPath } = await import('node:url');
+  const { homedir } = await import('node:os');
+  const { join } = await import('node:path');
+  const runtimeLauncher = fileURLToPath(new URL('./bin/edualc-runtime', import.meta.url));
+  const [main, auxiliary, completion, compact, fork, tasks] = await Promise.all([
     import('./src/sdk-run.ts'), import('./src/sdk-auxiliary.ts'), import('./src/sdk-completion.ts'),
+    import('./src/sdk-compact.ts'), import('./src/sdk-fork.ts'), import('./src/sdk-tasks.ts'),
   ]);
-  closeSdkRuns = () => { main.closeSdkRuns(); auxiliary.closeSdkAuxiliary(); completion.closeSdkCompletions(); };
-  process.once('exit', closeSdkRuns);
-  process.argv = [process.execPath, fileURLToPath(new URL('cli', root)), ...process.argv.slice(2)];
-  await import(new URL('cli', root).href);
-  closeSdkRuns();
-  process.exit(process.exitCode ?? 0);
+  // 本家の import/export を変えず、差し替えた関数本体から呼び出す。
+  globalThis[Symbol.for('edualc.sdk')] = Object.freeze({
+    originals: new Map(),
+    sdkRun: main.sdkRun, alignSdkHistory: main.alignSdkHistory, sdkContextUsage: main.sdkContextUsage,
+    sdkGoalCleared: main.sdkGoalCleared, sdkApplySettings: main.sdkApplySettings,
+    sdkTaskUpdated: tasks.sdkTaskUpdated, sdkTaskCanBackground: tasks.sdkTaskCanBackground,
+    sdkBackgroundTask: tasks.sdkBackgroundTask,
+    sdkMcpChanged: main.sdkMcpChanged, sdkMcpReconnect: main.sdkMcpReconnect,
+    sdkGenerateTitle: auxiliary.sdkGenerateTitle, sdkSideQuestion: auxiliary.sdkSideQuestion,
+    sdkComplete: completion.sdkComplete, sdkModelProbe: completion.sdkModelProbe, sdkToolFreeFork: fork.sdkToolFreeFork,
+    sdkCompactCall: compact.sdkCompactCall, sdkCompactManually: compact.sdkCompactManually,
+    // 本家の自己再起動時だけ SDK 接続を読み直す。外部コマンドには継承しない。
+    relaunchEnvironment: () => ({ BUN_OPTIONS: preloadOptions }),
+    runtimeLaunch: () => ({ cmd: runtimeLauncher, prefixArgs: [], target: manifest.native_binary }),
+    backgroundRoot: () => join(homedir(), '.edualc'),
+  });
+  process.once('exit', () => { main.closeSdkRuns(); auxiliary.closeSdkAuxiliary(); completion.closeSdkCompletions(); });
+  // preload の終了後、本家のコンパイル済み CLI が通常どおり起動する。
 } catch (error) {
-  closeSdkRuns?.();
   process.stderr.write(`${error instanceof Error ? error.stack : error}\n`);
   process.exit(1);
 }

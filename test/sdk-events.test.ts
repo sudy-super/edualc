@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test';
 import type { SDKMessage } from '@anthropic-ai/claude-agent-sdk';
-import { sdkSubagentProgress, type InternalSdkEvent, type NativeSdkEventHelpers } from '../src/sdk-events';
+import { convertSdkMessages, sdkSubagentProgress, type InternalSdkEvent, type NativeSdkEventHelpers } from '../src/sdk-events';
 
 function converters(rows: InternalSdkEvent[]) {
   const inputs: SDKMessage[][] = [];
@@ -16,6 +16,13 @@ function sdkFrame(type: string, parent: string | null, extra = {}): SDKMessage {
 }
 
 describe('native subagent event conversion', () => {
+  test('preserves SDK command replay as transcript-only output', () => {
+    const row = { type: 'user', message: { content: 'command output' } };
+    const mock = converters([row]);
+    const rows = convertSdkMessages(sdkFrame('user', null, { isReplay: true }), mock.helpers.convertMessages);
+    expect(rows[0]).toMatchObject({ isReplay: true, isVisibleInTranscriptOnly: true });
+  });
+
   test('routes confirmed child assistant rows through the original converters', async () => {
     const row = { type: 'assistant', uuid: 'original-row', message: { content: [{ type: 'tool_use', id: 'read-1', name: 'Read', input: {} }] } };
     const mock = converters([row]);
@@ -26,12 +33,13 @@ describe('native subagent event conversion', () => {
   });
 
   test('keeps child tool-result rows nested under the parent invocation', async () => {
-    const row = { type: 'user', toolUseResult: { success: true }, message: { content: [{ type: 'tool_result', tool_use_id: 'read-1', content: 'contents' }] } };
+    const row = { type: 'user', message: { content: [{ type: 'tool_result', tool_use_id: 'read-1', content: 'contents' }] } };
     const mock = converters([row]);
-    const progress = await sdkSubagentProgress(sdkFrame('user', 'parent-agent-tool'), mock.helpers);
+    const progress = await sdkSubagentProgress(sdkFrame('user', 'parent-agent-tool', { tool_use_result: { success: true } }), mock.helpers);
     expect(progress[0]?.parentToolUseID).toBe('parent-agent-tool');
     expect(progress[0]?.toolUseID).toBe('agent_parent-agent-tool');
     expect(progress[0]?.data.message).toBe(row);
+    expect(progress[0]?.data.message.toolUseResult).toEqual({ success: true });
     expect(progress[0]?.data).not.toHaveProperty('agentId');
   });
 

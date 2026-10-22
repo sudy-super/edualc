@@ -1,5 +1,7 @@
 node_modules/
 vendor/
-evidence/original/
+native/
+evidence/
 test/artifacts/
 __pycache__/
+.DS_Store

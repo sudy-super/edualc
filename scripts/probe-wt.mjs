@@ -1,7 +1,7 @@
 import { writeFileSync } from 'node:fs';
 import { randomUUID } from 'node:crypto';
 delete process.env.BUN_OPTIONS;
-const root = new URL('../vendor/claude-full/', import.meta.url);
+const root = new URL('file:///$bunfs/root/');
 const config = await import(new URL('chunk-2jyw98bz.js', root).href);
 await config.Xht();
 const { wT } = await import(new URL('chunk-hqtnbrjd.js', root).href);

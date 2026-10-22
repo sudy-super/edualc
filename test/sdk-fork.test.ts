@@ -3,7 +3,10 @@ import { mkdtempSync, readFileSync, readdirSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import type { query } from '../src/sdk';
-import { createSdkToolFreeFork } from '../src/sdk-fork';
+import { createSdkToolFreeFork as makeSdkToolFreeFork } from '../src/sdk-fork';
+function createSdkToolFreeFork(options: Parameters<typeof makeSdkToolFreeFork>[0]) {
+  return makeSdkToolFreeFork({ convertMessages: messages => messages as any, ...options });
+}
 
 const uuid = '00000000-0000-4000-8000-000000000001';
 const usage = { input_tokens: 12, output_tokens: 3, cache_creation_input_tokens: 0, cache_read_input_tokens: 7 };

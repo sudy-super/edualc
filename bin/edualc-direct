@@ -10,19 +10,21 @@ if ! edualc_api_key=$(jq -er '.env.ANTHROPIC_API_KEY | select(type == "string" a
   print -u2 "API キーを $auth_settings の env.ANTHROPIC_API_KEY に設定してください。"
   exit 1
 fi
-unset ANTHROPIC_AUTH_TOKEN CLAUDE_CODE_OAUTH_TOKEN \
-  CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR CLAUDE_CODE_API_KEY_FILE_DESCRIPTOR \
-  CLAUDE_CODE_GATEWAY_TOKEN_FILE_DESCRIPTOR CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR \
-  CCR_AGENT_PROXY_TOKEN_FILE_DESCRIPTOR CLAUDE_BG_AUTH_SNAPSHOT_PATH \
-  CLAUDE_CODE_HOST_CREDS_FILE CLAUDE_CODE_HOST_AUTH_ENV_VAR CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST
-export ANTHROPIC_API_KEY="$edualc_api_key"
+# 共有 settings.env でも認証が上書きされないよう、認証だけを上位の設定にする。
+# SDK の子だけに渡し、画面側の本家ログインは変更しない。
+edualc_runtime_auth=$(mktemp "$HOME/.edualc/.runtime-auth.XXXXXXXX")
+trap 'rm -f "$edualc_runtime_auth"' EXIT
+jq -c --arg credentials "$HOME/.edualc" '{apiKeyHelper:"", env:{
+  ANTHROPIC_API_KEY:.env.ANTHROPIC_API_KEY,
+  ANTHROPIC_CUSTOM_HEADERS:(.env.ANTHROPIC_CUSTOM_HEADERS // ""),
+  ANTHROPIC_AUTH_TOKEN:"", CLAUDE_CODE_OAUTH_TOKEN:"",
+  CLAUDE_SECURESTORAGE_CONFIG_DIR:$credentials,
+  CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR:"", CLAUDE_CODE_API_KEY_FILE_DESCRIPTOR:"",
+  CLAUDE_CODE_GATEWAY_TOKEN_FILE_DESCRIPTOR:"", CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR:"",
+  CCR_AGENT_PROXY_TOKEN_FILE_DESCRIPTOR:"", CLAUDE_BG_AUTH_SNAPSHOT_PATH:"",
+  CLAUDE_CODE_HOST_CREDS_FILE:"", CLAUDE_CODE_HOST_AUTH_ENV_VAR:"", CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST:""
+}}' "$auth_settings" > "$edualc_runtime_auth"
+mv -f "$edualc_runtime_auth" "$HOME/.edualc/runtime-auth.json"
+trap - EXIT
 unset edualc_api_key
-export CLAUDE_SECURESTORAGE_CONFIG_DIR="$HOME/.edualc"
-export EDUALC_SDK_PACKAGE="$HOME/.local/share/edualc/sdk/current/node_modules/@anthropic-ai/claude-agent-sdk"
-claude_runtime="$HOME/.local/share/claude/versions/2.1.302"
-if [[ ! -x "$claude_runtime" ]]; then
-  print -u2 'Claude Code 2.1.302 が見つかりません。README の抽出手順を確認してください。'
-  exit 1
-fi
-export BUN_OPTIONS="--preload=$app_dir/bootstrap.mjs"
-exec "$claude_runtime" --settings '{"apiKeyHelper":""}' "$@"
+exec "$app_dir/bin/edualc-runtime" "$@"

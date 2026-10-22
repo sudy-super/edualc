@@ -1,3 +1,4 @@
+import { loadNativeModule } from './claude';
 import type { RunParams } from './sdk-run';
 import { sdkRun, alignSdkHistory, getSdkHistory } from './sdk-run';
 import { appendFileSync } from 'node:fs';
@@ -13,8 +14,10 @@ interface Dependencies {
   run: typeof sdkRun;
   parameters(context: Context, options: CompactOptions): Promise<RunParams>;
   display(verbose: boolean, text?: string): Promise<string>;
+  commandOutput(events: Message[]): Promise<{ type: 'text'; value: string; level?: 'error' } | undefined>;
   align(parentId: string, messages: Message[]): void;
   history(parentId: string): Promise<Message[]>;
+  persist(messages: Message[]): Promise<void>;
 }
 
 export function createSdkCompact(dependencies: Dependencies) {
@@ -36,7 +39,11 @@ export function createSdkCompact(dependencies: Dependencies) {
       }
       if (terminal?.reason !== 'completed') throw new Error('Compaction canceled');
       const boundaryMarker = events.find(message => message.type === 'system' && message.subtype === 'compact_boundary');
-      if (!boundaryMarker) throw new Error('The SDK did not return a compaction boundary');
+      const commandOutput = await dependencies.commandOutput(events);
+      if (!boundaryMarker) {
+        if (commandOutput) return commandOutput;
+        throw new Error('The SDK did not return a compaction boundary');
+      }
       const saved = await dependencies.history(context.session.id);
       const original = new Map(saved.map(message => [message.uuid, message]));
       const metadata = boundaryMarker.compactMetadata;
@@ -50,11 +57,12 @@ export function createSdkCompact(dependencies: Dependencies) {
         .map(message => ({ ...message, isMeta: true, isCompactSummary: true }));
       if (!summaryMessages.length) throw new Error('The SDK did not return the compacted conversation summary');
       const compactionResult = { boundaryMarker, summaryMessages, messagesToKeep, attachments: [], hookResults: [] };
-      const displayText = await dependencies.display(Boolean(context.options.verbose));
+      await dependencies.persist([boundaryMarker, ...summaryMessages, ...messagesToKeep]);
+      const displayText = commandOutput?.value ?? await dependencies.display(Boolean(context.options.verbose));
       dependencies.align(context.session.id, [boundaryMarker, ...summaryMessages, ...messagesToKeep]);
       success = true;
       return {
-        type: 'compact', compactionResult,
+        type: 'compact' as const, compactionResult,
         displayText,
         displayRepeatsSummary: false,
         result: { tokensBefore: metadata?.preTokens, tokensAfter: metadata?.postTokens },
@@ -71,17 +79,43 @@ export function createSdkCompact(dependencies: Dependencies) {
   return { compactManually, call(instructions: string, context: Context) { return compactManually(context, { customInstructions: instructions }); } };
 }
 
-const bridge = createSdkCompact({
-  run: sdkRun, align: alignSdkHistory, history: getSdkHistory,
-  parameters: async (context, options) => {
-    const native = await import(new URL('../vendor/claude-full/chunk-w899cfp5.js', import.meta.url).href);
-    const params = await native.f5t({ toolUseContext: context, forkContextMessages: context.messages, mainThreadAgentDefinition: options.mainThreadAgentDefinition });
-    return { ...params, messages: context.messages, canUseTool: async () => ({ behavior: 'deny', message: 'Compaction cannot execute tools' }) };
-  },
-  display: async (verbose, text) => {
-    const native = await import(new URL('../vendor/claude-full/chunk-m7gqkrhq.js', import.meta.url).href);
-    return native.compactDisplayText(verbose, text);
-  },
-});
-export const sdkCompactCall = bridge.call;
-export const sdkCompactManually = bridge.compactManually;
+type NativeDisplay = (verbose: boolean, text?: string) => string;
+function nativeCompact(display: NativeDisplay) {
+  if (typeof display !== 'function') throw new Error('The native compact display callback is required');
+  return createSdkCompact({
+    run: sdkRun, align: alignSdkHistory, history: getSdkHistory,
+    persist: async messages => {
+      const writer = await loadNativeModule('chunk-hqtnbrjd.js');
+      await writer.Ov(messages);
+      await writer.Ou();
+      await writer._Fn();
+    },
+    commandOutput: async events => {
+      const [{ Ms }, { km }] = await Promise.all([
+        loadNativeModule('chunk-nhvhsxnt.js'),
+        loadNativeModule('chunk-25a3z2dq.js'),
+      ]);
+      for (const event of events.toReversed()) {
+        if (!(event.type === 'user' && event.isReplay) && !(event.type === 'system' && event.subtype === 'local_command')) continue;
+        const content = event.type === 'user' ? event.message?.content : event.content;
+        const text = typeof content === 'string' ? content : Array.isArray(content) ? content.filter(block => block.type === 'text').map(block => block.text).join('\n') : '';
+        const stderr = Ms(text, 'local-command-stderr');
+        if (stderr !== null) return { type: 'text', value: km(stderr), level: 'error' };
+        const stdout = Ms(text, 'local-command-stdout');
+        if (stdout !== null) return { type: 'text', value: km(stdout) };
+      }
+    },
+    parameters: async (context, options) => {
+      const native = await loadNativeModule('chunk-w899cfp5.js');
+      const params = await native.f5t({ toolUseContext: context, forkContextMessages: context.messages, mainThreadAgentDefinition: options.mainThreadAgentDefinition });
+      return { ...params, messages: context.messages, canUseTool: async () => ({ behavior: 'deny', message: 'Compaction cannot execute tools' }) };
+    },
+    display: async (verbose, text) => display(verbose, text),
+  });
+}
+export function sdkCompactCall(instructions: string, context: Context, display: NativeDisplay) {
+  return nativeCompact(display).call(instructions, context);
+}
+export function sdkCompactManually(context: Context, options: CompactOptions, display: NativeDisplay) {
+  return nativeCompact(display).compactManually(context, options);
+}

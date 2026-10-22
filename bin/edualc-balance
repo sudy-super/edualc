@@ -1,0 +1,4 @@
+#!/bin/zsh
+set -eu
+app_dir="${0:A:h:h}"
+exec python3 -I -S "$app_dir/src/credit-balance.py" "$@"

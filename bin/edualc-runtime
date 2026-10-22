@@ -1,0 +1,14 @@
+#!/bin/zsh
+set -eu
+app_dir="${0:A:h:h}"
+claude_runtime="$app_dir/native/edualc"
+if [[ ! -x "$claude_runtime" ]]; then
+  print -u2 'edualc の実行ファイルがありません。npm run extract を実行してください。'
+  exit 1
+fi
+export EDUALC_AUTH_SETTINGS_FILE="$HOME/.edualc/runtime-auth.json"
+export EDUALC_BALANCE_COMMAND="$app_dir/bin/edualc-balance"
+export EDUALC_SDK_PACKAGE="$HOME/.local/share/edualc/sdk/current/node_modules/@anthropic-ai/claude-agent-sdk"
+export BUN_OPTIONS="--preload=$app_dir/bootstrap.mjs"
+# 本家が先頭の引数で判定する PTY ホスト・待機セッションの起動順序を保つ。
+exec "$claude_runtime" "$@"

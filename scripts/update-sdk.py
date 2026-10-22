@@ -34,7 +34,7 @@ def update():
             raise ValueError(f'安定版のバージョン番号ではありません: {version!r}')
         target = STORE / 'versions' / version
         current = STORE / 'current'
-        verifier_hash = hashlib.sha256((ROOT / 'scripts/check-sdk-update.mjs').read_bytes() + (ROOT / 'src/sdk.ts').read_bytes()).hexdigest()
+        verifier_hash = hashlib.sha256((ROOT / 'scripts/check-sdk-update.mjs').read_bytes() + (ROOT / 'src/sdk.ts').read_bytes() + (ROOT / 'native/manifest.json').read_bytes()).hexdigest()
         active = current.is_symlink() and current.resolve() == target
         verification_path = target / 'verified.json'
         if active and verification_path.is_file() and json.loads(verification_path.read_text()).get('verifierSha256') == verifier_hash:
@@ -56,7 +56,7 @@ def update():
             raise ValueError('SDK と内蔵 CLI のバージョン情報が一致しません。')
         if hashlib.sha256(native.read_bytes()).hexdigest() != manifest['platforms'][f'{system}-{machine}']['checksum']:
             raise ValueError('SDK 対応実行ファイルの SHA-256 が一致しません。')
-        tui_binary = json.loads((ROOT / 'vendor/claude-full/manifest.json').read_text())['binary']
+        tui_binary = json.loads((ROOT / 'native/manifest.json').read_text())['native_binary']
         environment = {**os.environ, 'BUN_OPTIONS': f'--preload={ROOT / "scripts/check-sdk-update.mjs"}',
                        'EDUALC_SDK_PACKAGE': str(sdk)}
         result = run([tui_binary, str(sdk), str(native)], env=environment, capture_output=True)

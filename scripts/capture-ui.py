@@ -23,6 +23,7 @@ parser.add_argument('--startup-wait', type=float)
 parser.add_argument('--settle-wait', type=float, default=0, help='Keep reading after all expected output appears')
 parser.add_argument('--expect-timeout', type=float, default=60)
 parser.add_argument('--ready', help='Wait until this text appears before sending keys')
+parser.add_argument('--accept-theme', action='store_true', help='Confirm the theme in an isolated test HOME')
 parser.add_argument('--keys', action='append', default=[])
 parser.add_argument('--expect-after', action='append', default=[])
 parser.add_argument('--columns', type=int, default=100)
@@ -58,7 +59,11 @@ try:
     drain(args.startup_wait if args.startup_wait is not None else args.wait)
     if args.ready:
         deadline = time.monotonic() + 45
+        theme_confirmed = False
         while args.ready not in '\n'.join(screen.display):
+            if args.accept_theme and not theme_confirmed and 'Choose the text style' in '\n'.join(screen.display):
+                os.write(master, b'\r')
+                theme_confirmed = True
             if process.poll() is not None:
                 raise AssertionError(f'TUI exited before becoming ready: {process.returncode}')
             if time.monotonic() >= deadline:

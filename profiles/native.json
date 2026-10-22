@@ -1,0 +1,3128 @@
+{
+  "schema": 1,
+  "patches": [
+    {
+      "id": "body:chunk-207g0kar.js:RD",
+      "selectors": [
+        {
+          "hash": "4f24ef2d446bdb280e607d3efca77367cafec5e4582c99ff3c9fc996c6945acd",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "RD",
+            "e",
+            "o",
+            "n",
+            "performance",
+            "Qo",
+            "$A",
+            "r",
+            "u",
+            "s",
+            "ma",
+            "fat",
+            "tIn",
+            "Lm",
+            "$d",
+            "T",
+            "TNn",
+            "al",
+            "xs",
+            "f",
+            "b5n",
+            "D0e",
+            "m",
+            "zGs",
+            "g",
+            "gd"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return yield*globalThis[Symbol.for(\"edualc.sdk\")].sdkRun(...arguments);"
+            }
+          ]
+        },
+        {
+          "hash": "7a572f5310da851ed9a2974b6ddabc6861eff874c42f1b769791e1704216e590",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "kL",
+            "e",
+            "o",
+            "n",
+            "performance",
+            "es",
+            "MR",
+            "r",
+            "y",
+            "s",
+            "Aa",
+            "lXe",
+            "XHn",
+            "Zm",
+            "pu",
+            "M",
+            "OWn",
+            "Cl",
+            "qs",
+            "h",
+            "ner",
+            "od",
+            "hDe",
+            "m",
+            "QQs",
+            "g",
+            "Fd"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return yield*globalThis[Symbol.for(\"edualc.sdk\")].sdkRun(...arguments);"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-2jyw98bz.js:jHo",
+      "selectors": [
+        {
+          "hash": "7d828fe15acfd956cdee1cc5f6dee7c18e9ca24e6b50bff371b5bfd6556bc1ab",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "jHo",
+            "yC",
+            "xe"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return yC(globalThis[Symbol.for(\"edualc.sdk\")].backgroundRoot(),\"jobs\");"
+            }
+          ]
+        },
+        {
+          "hash": "7d828fe15acfd956cdee1cc5f6dee7c18e9ca24e6b50bff371b5bfd6556bc1ab",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "uzo",
+            "kT",
+            "He"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return kT(globalThis[Symbol.for(\"edualc.sdk\")].backgroundRoot(),\"jobs\");"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-43sx77a0.js:CUe",
+      "selectors": [
+        {
+          "hash": "29bba3db17884f57a11b6c20ea99f6f44cc5b9a7307d28f3b3a8a596d46ea71d",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "CUe",
+            "r",
+            "YY",
+            "t",
+            "K5e",
+            "Fp",
+            "process",
+            "e"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].runtimeLaunch();"
+            }
+          ]
+        },
+        {
+          "hash": "29bba3db17884f57a11b6c20ea99f6f44cc5b9a7307d28f3b3a8a596d46ea71d",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "FWe",
+            "r",
+            "J7",
+            "t",
+            "H7e",
+            "af",
+            "process",
+            "e"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].runtimeLaunch();"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-5w8txcza.js:nne",
+      "selectors": [
+        {
+          "hash": "d8e7bb5f7a3e12186a272f373a77e6efeb4aa2ef5b7959e3147f3c72b60d89a9",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "nne",
+            "A",
+            "xe"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return A(globalThis[Symbol.for(\"edualc.sdk\")].backgroundRoot(),\"sessions\");"
+            }
+          ]
+        },
+        {
+          "hash": "d8e7bb5f7a3e12186a272f373a77e6efeb4aa2ef5b7959e3147f3c72b60d89a9",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "qre",
+            "A",
+            "He"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return A(globalThis[Symbol.for(\"edualc.sdk\")].backgroundRoot(),\"sessions\");"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-6mb4af0f.js:sEt",
+      "selectors": [
+        {
+          "hash": "312c73cbdcc4df57bdeae432021913b4607afdcabd1634999363ec8a55195e9a",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "sEt",
+            "o",
+            "n",
+            "i",
+            "s",
+            "l",
+            "a",
+            "e",
+            "g",
+            "gg",
+            "mr",
+            "p",
+            "w",
+            "r",
+            "u",
+            "dKr",
+            "A",
+            "b",
+            "_",
+            "Ae",
+            "_d",
+            "h",
+            "x",
+            "UA",
+            "c",
+            "T",
+            "d",
+            "Qot",
+            "f",
+            "m",
+            "N",
+            "y",
+            "Au",
+            "zf"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].sdkSideQuestion(...arguments);"
+            }
+          ]
+        },
+        {
+          "hash": "312c73cbdcc4df57bdeae432021913b4607afdcabd1634999363ec8a55195e9a",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "DTt",
+            "o",
+            "n",
+            "i",
+            "s",
+            "l",
+            "a",
+            "e",
+            "g",
+            "nf",
+            "hr",
+            "p",
+            "w",
+            "r",
+            "u",
+            "LZr",
+            "A",
+            "b",
+            "_",
+            "Pe",
+            "Rd",
+            "h",
+            "x",
+            "HR",
+            "c",
+            "T",
+            "d",
+            "olt",
+            "f",
+            "m",
+            "N",
+            "y",
+            "wu",
+            "ym"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].sdkSideQuestion(...arguments);"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-7z6q925e.js:x6r",
+      "selectors": [
+        {
+          "hash": "3547aae8d622b3a98e2e2aec2a171425b8839ffa18d034249f400574a6d26314",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "x6r",
+            "Fp",
+            "process",
+            "De",
+            "B5"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].runtimeLaunch().cmd;"
+            }
+          ]
+        },
+        {
+          "hash": "3547aae8d622b3a98e2e2aec2a171425b8839ffa18d034249f400574a6d26314",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "u7r",
+            "af",
+            "process",
+            "Ne",
+            "E8"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].runtimeLaunch().cmd;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-7z6q925e.js:Br",
+      "selectors": [
+        {
+          "hash": "0309f7885fbb62c5cfc0c72092d1ad54aa24d078bc53e9150d2f22b84d3610e1",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "Br",
+            "r",
+            "e",
+            "n",
+            "s",
+            "h",
+            "M",
+            "L",
+            "WE",
+            "J4",
+            "Ae",
+            "Ce",
+            "w",
+            "CUe",
+            "_e",
+            "u",
+            "E",
+            "$e",
+            "Qe",
+            "i",
+            "b",
+            "R",
+            "A",
+            "Mt",
+            "T",
+            "m0t",
+            "m",
+            "x"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "let _edualcLaunch=CUe();if(!await _e(_edualcLaunch.cmd))return{err:new x(\"edualc runtime launcher is not executable\",\"edualc runtime launcher is not executable\")};let _edualcCommand=WE(()=>J4(_edualcLaunch));return Ae(await Ce(n,[_edualcCommand.cmd,..._edualcCommand.prefixArgs,...r]),e,s?.fd);"
+            }
+          ]
+        },
+        {
+          "hash": "0309f7885fbb62c5cfc0c72092d1ad54aa24d078bc53e9150d2f22b84d3610e1",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "Br",
+            "r",
+            "e",
+            "n",
+            "s",
+            "h",
+            "L",
+            "M",
+            "bv",
+            "W9",
+            "ve",
+            "Pe",
+            "w",
+            "FWe",
+            "_e",
+            "u",
+            "E",
+            "$e",
+            "Qe",
+            "i",
+            "b",
+            "T",
+            "A",
+            "Lt",
+            "P",
+            "XFt",
+            "m",
+            "R"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "let _edualcLaunch=FWe();if(!await _e(_edualcLaunch.cmd))return{err:new R(\"edualc runtime launcher is not executable\",\"edualc runtime launcher is not executable\")};let _edualcCommand=bv(()=>W9(_edualcLaunch));return ve(await Pe(n,[_edualcCommand.cmd,..._edualcCommand.prefixArgs,...r]),e,s?.fd);"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-dry2kba6.js:UO",
+      "selectors": [
+        {
+          "hash": "a93f93bde06355099320536ba69f85de8d058495b67d73d9b9bd79c58ba1b064",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "UO",
+            "b",
+            "xe",
+            "h"
+          ],
+          "moduleMarkers": [
+            "daemon.lock"
+          ],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return b(globalThis[Symbol.for(\"edualc.sdk\")].backgroundRoot(),h);"
+            }
+          ]
+        },
+        {
+          "hash": "a93f93bde06355099320536ba69f85de8d058495b67d73d9b9bd79c58ba1b064",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "wM",
+            "b",
+            "He",
+            "h"
+          ],
+          "moduleMarkers": [
+            "daemon.lock"
+          ],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return b(globalThis[Symbol.for(\"edualc.sdk\")].backgroundRoot(),h);"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-hqtnbrjd.js:ULn",
+      "selectors": [
+        {
+          "hash": "ef8e97730c02cf2b4454802803555bd0adf34a34f1e3c146239f27cace5b8fa4",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "ULn",
+            "e",
+            "n",
+            "r",
+            "s",
+            "h",
+            "y",
+            "b",
+            "w",
+            "H",
+            "K",
+            "V",
+            "Q",
+            "_e",
+            "ke",
+            "fat",
+            "Se",
+            "be",
+            "Re",
+            "Ce",
+            "Ie",
+            "Upr",
+            "De",
+            "t9e",
+            "Ge",
+            "Kg",
+            "Xe",
+            "Xp",
+            "tt",
+            "ot",
+            "MS",
+            "Vd",
+            "vt",
+            "st",
+            "rx",
+            "mt",
+            "xV",
+            "Dt",
+            "gt",
+            "fi",
+            "ri",
+            "h3e",
+            "lbe",
+            "jt",
+            "Ht",
+            "Gt",
+            "Kt",
+            "Yt",
+            "NFe",
+            "Dn",
+            "tn",
+            "zn",
+            "Kn",
+            "dn",
+            "on",
+            "qn",
+            "un",
+            "Un",
+            "so",
+            "Jn",
+            "no",
+            "yn",
+            "io",
+            "wo",
+            "ko",
+            "qo",
+            "zo",
+            "yo",
+            "Ao",
+            "Promise",
+            "zpr",
+            "qpr",
+            "Kpr",
+            "Xpr",
+            "Qpr",
+            "Jpr",
+            "Vpr",
+            "nmr",
+            "No",
+            "Ypr",
+            "Mo",
+            "gs",
+            "Rr",
+            "Zr",
+            "Po",
+            "cY",
+            "mKt",
+            "Xr",
+            "Dr",
+            "ns",
+            "br",
+            "fTe",
+            "bhr",
+            "pTe",
+            "$r",
+            "fa",
+            "ol",
+            "Kr",
+            "Gqt",
+            "yh",
+            "ml",
+            "Math",
+            "Lr",
+            "Fr",
+            "Lo",
+            "zK",
+            "Co",
+            "qr",
+            "As",
+            "fs",
+            "Or",
+            "ia",
+            "Di",
+            "sa",
+            "Xa",
+            "as",
+            "$s",
+            "Fi",
+            "vo",
+            "Wr",
+            "Ls",
+            "ds",
+            "ls",
+            "Map",
+            "oi",
+            "Array",
+            "Mi",
+            "Aa",
+            "Bco"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].sdkContextUsage(y);"
+            }
+          ]
+        },
+        {
+          "hash": "902746d4172a319563af38541873aab2116c96e0f37f560fa5e7156b57155ef1",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "Jjn",
+            "e",
+            "n",
+            "r",
+            "s",
+            "h",
+            "y",
+            "b",
+            "w",
+            "H",
+            "q",
+            "K",
+            "Q",
+            "Se",
+            "be",
+            "we",
+            "lXe",
+            "ve",
+            "Ee",
+            "Me",
+            "xe",
+            "$e",
+            "Ddr",
+            "Ge",
+            "r7e",
+            "Ye",
+            "_h",
+            "it",
+            "ff",
+            "at",
+            "mt",
+            "mb",
+            "oc",
+            "lt",
+            "kt",
+            "Qx",
+            "xt",
+            "rq",
+            "ft",
+            "St",
+            "Cr",
+            "Is",
+            "G9e",
+            "$fe",
+            "Wt",
+            "Gt",
+            "on",
+            "Kt",
+            "bn",
+            "N1e",
+            "Bn",
+            "rn",
+            "cn",
+            "no",
+            "ao",
+            "To",
+            "dn",
+            "wo",
+            "$n",
+            "Xn",
+            "to",
+            "Vn",
+            "fo",
+            "co",
+            "io",
+            "Ro",
+            "Ko",
+            "No",
+            "wr",
+            "Ao",
+            "cr",
+            "Promise",
+            "$dr",
+            "Bdr",
+            "Hdr",
+            "Wdr",
+            "Gdr",
+            "zdr",
+            "Udr",
+            "Ydr",
+            "cs",
+            "jdr",
+            "Br",
+            "Xi",
+            "Eo",
+            "Wr",
+            "Tr",
+            "VX",
+            "v5t",
+            "vr",
+            "rr",
+            "lr",
+            "qr",
+            "Gwe",
+            "oTr",
+            "zwe",
+            "os",
+            "_l",
+            "$a",
+            "ka",
+            "s5t",
+            "Bh",
+            "ad",
+            "Math",
+            "ss",
+            "Go",
+            "Or",
+            "OK",
+            "ys",
+            "js",
+            "Jo",
+            "vs",
+            "Gs",
+            "ii",
+            "Ua",
+            "Fa",
+            "Hl",
+            "_s",
+            "Ho",
+            "Lr",
+            "Vs",
+            "Es",
+            "ki",
+            "Ri",
+            "Qr",
+            "Map",
+            "qi",
+            "Array",
+            "va",
+            "fi",
+            "EEo"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].sdkContextUsage(y);"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-hqtnbrjd.js:nL",
+      "selectors": [
+        {
+          "hash": "2e1af6675b4b569bca5e597cc0731a61d326d3c68302bc3c15303108b7b8e6eb",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "nL",
+            "e",
+            "n",
+            "ple",
+            "VE",
+            "r",
+            "o7e",
+            "a",
+            "VJ",
+            "lht",
+            "age",
+            "s",
+            "uMo",
+            "eTr",
+            "h",
+            "y",
+            "CYr",
+            "b",
+            "qM"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].sdkComplete(...arguments);"
+            }
+          ]
+        },
+        {
+          "hash": "2e1af6675b4b569bca5e597cc0731a61d326d3c68302bc3c15303108b7b8e6eb",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "VL",
+            "e",
+            "n",
+            "O3",
+            "lS",
+            "r",
+            "DZe",
+            "a",
+            "_Z",
+            "LHe",
+            "Sye",
+            "s",
+            "H2o",
+            "a0r",
+            "h",
+            "y",
+            "nyr",
+            "b",
+            "jH"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].sdkComplete(...arguments);"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-j5p4ntzv.js:c",
+      "selectors": [
+        {
+          "hash": "10d2ff28609b3ba3124347ee74a0882f023539a5edd81e962fa1299a593f31e4",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "c",
+            "e",
+            "i",
+            "xe"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return i(globalThis[Symbol.for(\"edualc.sdk\")].backgroundRoot(),\"daemon\");"
+            }
+          ]
+        },
+        {
+          "hash": "10d2ff28609b3ba3124347ee74a0882f023539a5edd81e962fa1299a593f31e4",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "c",
+            "e",
+            "i",
+            "He"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return i(globalThis[Symbol.for(\"edualc.sdk\")].backgroundRoot(),\"daemon\");"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-j5p4ntzv.js:Z",
+      "selectors": [
+        {
+          "hash": "7d20e29ab6d0ec3667c9fd216ba372e065c0482fa4a1fb7046a5df0460d68008",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "Z",
+            "K",
+            "Q",
+            "xe"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return K(\"sha256\").update(Q(globalThis[Symbol.for(\"edualc.sdk\")].backgroundRoot())).digest(\"hex\").slice(0,8);"
+            }
+          ]
+        },
+        {
+          "hash": "7d20e29ab6d0ec3667c9fd216ba372e065c0482fa4a1fb7046a5df0460d68008",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "Y",
+            "L",
+            "B",
+            "He"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return L(\"sha256\").update(B(globalThis[Symbol.for(\"edualc.sdk\")].backgroundRoot())).digest(\"hex\").slice(0,8);"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-m7gqkrhq.js:se",
+      "selectors": [
+        {
+          "hash": "e9fedf83f38d77f8fd62a521630667cf8fd63b35eba33e2e1276fe387de1da81",
+          "kind": 220,
+          "topLevel": true,
+          "identifiers": [
+            "r",
+            "e",
+            "i",
+            "v",
+            "oj"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].sdkCompactCall(r,e,_edualcCompactDisplay);"
+            }
+          ],
+          "bindings": [
+            {
+              "name": "_edualcCompactDisplay",
+              "hash": "743fbd05e72369d609b4dac5fba42aeb497a5630efbb551d879916f9af1148cd"
+            }
+          ]
+        },
+        {
+          "hash": "e9fedf83f38d77f8fd62a521630667cf8fd63b35eba33e2e1276fe387de1da81",
+          "kind": 220,
+          "topLevel": true,
+          "identifiers": [
+            "r",
+            "e",
+            "i",
+            "O",
+            "_W"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].sdkCompactCall(r,e,_edualcCompactDisplay);"
+            }
+          ],
+          "bindings": [
+            {
+              "name": "_edualcCompactDisplay",
+              "hash": "743fbd05e72369d609b4dac5fba42aeb497a5630efbb551d879916f9af1148cd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-m7gqkrhq.js:v",
+      "selectors": [
+        {
+          "hash": "e409b05d639f8e87e8c7533d88c43795b7d27a519b267f31042d1b592bd244c7",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "v",
+            "r",
+            "e",
+            "i",
+            "f",
+            "y",
+            "h",
+            "a",
+            "x",
+            "kj",
+            "ri",
+            "Error",
+            "m5t",
+            "o",
+            "O",
+            "n",
+            "qe",
+            "wP",
+            "Zbe",
+            "C4",
+            "l",
+            "g5t",
+            "String"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].sdkCompactManually(r,arguments[1],_edualcCompactDisplay);"
+            }
+          ],
+          "bindings": [
+            {
+              "name": "_edualcCompactDisplay",
+              "hash": "743fbd05e72369d609b4dac5fba42aeb497a5630efbb551d879916f9af1148cd"
+            }
+          ]
+        },
+        {
+          "hash": "e409b05d639f8e87e8c7533d88c43795b7d27a519b267f31042d1b592bd244c7",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "O",
+            "r",
+            "e",
+            "i",
+            "f",
+            "y",
+            "h",
+            "a",
+            "R",
+            "NW",
+            "Is",
+            "Error",
+            "s8t",
+            "o",
+            "b",
+            "n",
+            "Qe",
+            "iI",
+            "lve",
+            "a9",
+            "l",
+            "i8t",
+            "String"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].sdkCompactManually(r,arguments[1],_edualcCompactDisplay);"
+            }
+          ],
+          "bindings": [
+            {
+              "name": "_edualcCompactDisplay",
+              "hash": "743fbd05e72369d609b4dac5fba42aeb497a5630efbb551d879916f9af1148cd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-q2xmyq20.js:cKt",
+      "selectors": [
+        {
+          "hash": "7b93da96921c877c6a66d923d15c1103ec5d1b50dad2d36373b2c1d6ef3ceb6e",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "cKt",
+            "l",
+            "xe"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return l(globalThis[Symbol.for(\"edualc.sdk\")].backgroundRoot(),\"daemon.status.json\");"
+            }
+          ]
+        },
+        {
+          "hash": "7b93da96921c877c6a66d923d15c1103ec5d1b50dad2d36373b2c1d6ef3ceb6e",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "W9t",
+            "l",
+            "He"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return l(globalThis[Symbol.for(\"edualc.sdk\")].backgroundRoot(),\"daemon.status.json\");"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-v79yvp1y.js:J_e",
+      "selectors": [
+        {
+          "hash": "636b0ac80b7ab63d44f8e0f2dfb09ae207a4972e35781de61cffe49b30af1092",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "J_e",
+            "n",
+            "c",
+            "r",
+            "e",
+            "_",
+            "s",
+            "d",
+            "w",
+            "T",
+            "l",
+            "b",
+            "v",
+            "ut",
+            "i",
+            "t"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].sdkGenerateTitle(...arguments);"
+            }
+          ]
+        },
+        {
+          "hash": "636b0ac80b7ab63d44f8e0f2dfb09ae207a4972e35781de61cffe49b30af1092",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "dwe",
+            "n",
+            "c",
+            "r",
+            "e",
+            "_",
+            "s",
+            "d",
+            "w",
+            "T",
+            "l",
+            "b",
+            "v",
+            "gt",
+            "i",
+            "t"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return globalThis[Symbol.for(\"edualc.sdk\")].sdkGenerateTitle(...arguments);"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body:chunk-y12yzfze.js:Ace",
+      "selectors": [
+        {
+          "hash": "68d591a37d7b978d4dd2690ae71cf58cb5f0e4fc545a081e6c859402e8cbc670",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "Ace",
+            "o",
+            "xe"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return o(globalThis[Symbol.for(\"edualc.sdk\")].backgroundRoot(),\"daemon.log\");"
+            }
+          ]
+        },
+        {
+          "hash": "68d591a37d7b978d4dd2690ae71cf58cb5f0e4fc545a081e6c859402e8cbc670",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "Npe",
+            "o",
+            "He"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "body",
+              "template": "return o(globalThis[Symbol.for(\"edualc.sdk\")].backgroundRoot(),\"daemon.log\");"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-probe",
+      "selectors": [
+        {
+          "hash": "7b9df635cc91c8f983a723a284bdd66a0bd950e4cfdb843f3ee0378a47ab5821",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "xcr",
+            "e",
+            "o",
+            "r",
+            "Yr",
+            "c",
+            "Aq",
+            "a",
+            "txo",
+            "uke",
+            "f",
+            "g",
+            "n",
+            "Pe",
+            "s",
+            "i",
+            "URL",
+            "u",
+            "Pi",
+            "PGe",
+            "cU",
+            "A"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "await cU({model:r,max_tokens:1,maxRetries:0,querySource:\"model_validation\"",
+              "after": "await globalThis[Symbol.for(\"edualc.sdk\")].sdkModelProbe({model:r,max_tokens:1,maxRetries:0,querySource:\"model_validation\""
+            }
+          ]
+        },
+        {
+          "hash": "7b9df635cc91c8f983a723a284bdd66a0bd950e4cfdb843f3ee0378a47ab5821",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "JSr",
+            "e",
+            "o",
+            "r",
+            "Xr",
+            "u",
+            "p4",
+            "a",
+            "WUo",
+            "xTe",
+            "c",
+            "g",
+            "n",
+            "Re",
+            "s",
+            "i",
+            "URL",
+            "f",
+            "Ni",
+            "oKe",
+            "WH",
+            "A"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "await WH({model:r,max_tokens:1,maxRetries:0,querySource:\"model_validation\"",
+              "after": "await globalThis[Symbol.for(\"edualc.sdk\")].sdkModelProbe({model:r,max_tokens:1,maxRetries:0,querySource:\"model_validation\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tui-events",
+      "selectors": [
+        {
+          "hash": "ddc60f754d384ff05bd33fe9476e45bf20ac47c74f8d798067277c5a98d737da",
+          "kind": 175,
+          "topLevel": false,
+          "identifiers": [
+            "h",
+            "A",
+            "L",
+            "H",
+            "ee",
+            "de",
+            "_e",
+            "Ee",
+            "De",
+            "Oe",
+            "Ue",
+            "ze",
+            "Ge",
+            "tt",
+            "it",
+            "St",
+            "Pt",
+            "vt",
+            "At",
+            "Mt",
+            "Nt",
+            "Dt",
+            "Qt",
+            "qt",
+            "no",
+            "eo",
+            "ao",
+            "co",
+            "Co",
+            "Ro",
+            "mo",
+            "yo",
+            "xo",
+            "Fo",
+            "Vo",
+            "Go",
+            "so",
+            "po",
+            "Bo",
+            "Zo",
+            "Cn",
+            "Po",
+            "Qo",
+            "_o",
+            "gn",
+            "jo",
+            "un",
+            "xn",
+            "$n",
+            "Rn",
+            "uo",
+            "Cl",
+            "x3",
+            "fWs",
+            "RD",
+            "ai",
+            "process",
+            "Et",
+            "Wa",
+            "uot",
+            "mot",
+            "UN",
+            "fn",
+            "Dn",
+            "Kzt",
+            "Tbe",
+            "txe",
+            "Zn",
+            "iBn",
+            "Map",
+            "fbn",
+            "Promise",
+            "X",
+            "o9o",
+            "s9o",
+            "fNe"
+          ],
+          "moduleMarkers": [
+            "useManageMcpConnections"
+          ],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "appendSystemMessage:(jo)=>Qo({type:\"append\",messages:[jo]}),onChangeDynamicMcpConfig:",
+              "after": "sdkApplyEvent:(jo)=>this.applyEvent(jo),appendSystemMessage:(jo)=>Qo({type:\"append\",messages:[jo]}),onChangeDynamicMcpConfig:"
+            }
+          ]
+        },
+        {
+          "hash": "ddc60f754d384ff05bd33fe9476e45bf20ac47c74f8d798067277c5a98d737da",
+          "kind": 175,
+          "topLevel": false,
+          "identifiers": [
+            "h",
+            "x",
+            "L",
+            "H",
+            "Z",
+            "ne",
+            "Se",
+            "Ce",
+            "Le",
+            "Be",
+            "$e",
+            "Ve",
+            "Ge",
+            "et",
+            "lt",
+            "St",
+            "Pt",
+            "_t",
+            "xt",
+            "Mt",
+            "It",
+            "Ht",
+            "Zt",
+            "qt",
+            "so",
+            "oo",
+            "io",
+            "ao",
+            "_o",
+            "To",
+            "go",
+            "vo",
+            "xo",
+            "Bo",
+            "Uo",
+            "cn",
+            "ro",
+            "Mo",
+            "Yo",
+            "sn",
+            "Rn",
+            "Wo",
+            "Ho",
+            "Oo",
+            "Pn",
+            "yn",
+            "Fo",
+            "Zo",
+            "Un",
+            "wn",
+            "co",
+            "Ml",
+            "m5",
+            "P7s",
+            "kL",
+            "Ns",
+            "process",
+            "At",
+            "Wa",
+            "Pat",
+            "Mat",
+            "NF",
+            "xn",
+            "Sn",
+            "n4t",
+            "FEe",
+            "AIe",
+            "Qn",
+            "Yzn",
+            "Map",
+            "eAn",
+            "Promise",
+            "Y",
+            "pss",
+            "fss",
+            "rUe"
+          ],
+          "moduleMarkers": [
+            "useManageMcpConnections"
+          ],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "appendSystemMessage:(yn)=>Ho({type:\"append\",messages:[yn]}),onChangeDynamicMcpConfig:",
+              "after": "sdkApplyEvent:(yn)=>this.applyEvent(yn),appendSystemMessage:(yn)=>Ho({type:\"append\",messages:[yn]}),onChangeDynamicMcpConfig:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tui-settings",
+      "selectors": [
+        {
+          "hash": "ddc60f754d384ff05bd33fe9476e45bf20ac47c74f8d798067277c5a98d737da",
+          "kind": 175,
+          "topLevel": false,
+          "identifiers": [
+            "h",
+            "A",
+            "L",
+            "H",
+            "ee",
+            "de",
+            "_e",
+            "Ee",
+            "De",
+            "Oe",
+            "Ue",
+            "ze",
+            "Ge",
+            "tt",
+            "it",
+            "St",
+            "Pt",
+            "vt",
+            "At",
+            "Mt",
+            "Nt",
+            "Dt",
+            "Qt",
+            "qt",
+            "no",
+            "eo",
+            "ao",
+            "co",
+            "Co",
+            "Ro",
+            "mo",
+            "yo",
+            "xo",
+            "Fo",
+            "Vo",
+            "Go",
+            "so",
+            "po",
+            "Bo",
+            "Zo",
+            "Cn",
+            "Po",
+            "Qo",
+            "_o",
+            "gn",
+            "jo",
+            "un",
+            "xn",
+            "$n",
+            "Rn",
+            "uo",
+            "Cl",
+            "x3",
+            "fWs",
+            "RD",
+            "ai",
+            "process",
+            "Et",
+            "Wa",
+            "uot",
+            "mot",
+            "UN",
+            "fn",
+            "Dn",
+            "Kzt",
+            "Tbe",
+            "txe",
+            "Zn",
+            "iBn",
+            "Map",
+            "fbn",
+            "Promise",
+            "X",
+            "o9o",
+            "s9o",
+            "fNe"
+          ],
+          "moduleMarkers": [
+            "useManageMcpConnections"
+          ],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "else if(jo.type===\"apply_flag_settings\")fNe(jo.settings,Nt)",
+              "after": "else if(jo.type===\"apply_flag_settings\"){fNe(jo.settings,Nt);globalThis[Symbol.for(\"edualc.sdk\")].sdkApplySettings(Oe.id,jo.settings)}"
+            }
+          ]
+        },
+        {
+          "hash": "ddc60f754d384ff05bd33fe9476e45bf20ac47c74f8d798067277c5a98d737da",
+          "kind": 175,
+          "topLevel": false,
+          "identifiers": [
+            "h",
+            "x",
+            "L",
+            "H",
+            "Z",
+            "ne",
+            "Se",
+            "Ce",
+            "Le",
+            "Be",
+            "$e",
+            "Ve",
+            "Ge",
+            "et",
+            "lt",
+            "St",
+            "Pt",
+            "_t",
+            "xt",
+            "Mt",
+            "It",
+            "Ht",
+            "Zt",
+            "qt",
+            "so",
+            "oo",
+            "io",
+            "ao",
+            "_o",
+            "To",
+            "go",
+            "vo",
+            "xo",
+            "Bo",
+            "Uo",
+            "cn",
+            "ro",
+            "Mo",
+            "Yo",
+            "sn",
+            "Rn",
+            "Wo",
+            "Ho",
+            "Oo",
+            "Pn",
+            "yn",
+            "Fo",
+            "Zo",
+            "Un",
+            "wn",
+            "co",
+            "Ml",
+            "m5",
+            "P7s",
+            "kL",
+            "Ns",
+            "process",
+            "At",
+            "Wa",
+            "Pat",
+            "Mat",
+            "NF",
+            "xn",
+            "Sn",
+            "n4t",
+            "FEe",
+            "AIe",
+            "Qn",
+            "Yzn",
+            "Map",
+            "eAn",
+            "Promise",
+            "Y",
+            "pss",
+            "fss",
+            "rUe"
+          ],
+          "moduleMarkers": [
+            "useManageMcpConnections"
+          ],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "else if(yn.type===\"apply_flag_settings\")rUe(yn.settings,It)",
+              "after": "else if(yn.type===\"apply_flag_settings\"){rUe(yn.settings,It);globalThis[Symbol.for(\"edualc.sdk\")].sdkApplySettings(Be.id,yn.settings)}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tui-mcp",
+      "selectors": [
+        {
+          "hash": "6232ee3482de6d88a7b12259aff6f575ac016855190732e5d49a1ba0ff73648c",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "CRe",
+            "h",
+            "A",
+            "L",
+            "H",
+            "ee",
+            "Bn",
+            "de",
+            "_e",
+            "Ie",
+            "Ee",
+            "Pu",
+            "De",
+            "c6t",
+            "Oe",
+            "D6",
+            "Ue",
+            "$ze",
+            "ze",
+            "R",
+            "Ge",
+            "tt",
+            "y",
+            "it",
+            "St",
+            "Pt",
+            "vt",
+            "V",
+            "uo",
+            "HEo",
+            "At",
+            "jEo",
+            "Mt",
+            "Nt",
+            "dn",
+            "Dt",
+            "Map",
+            "Qt",
+            "qt",
+            "no",
+            "eo",
+            "ao",
+            "co",
+            "Co",
+            "Ro",
+            "mo",
+            "yo",
+            "xo",
+            "Set",
+            "Fo",
+            "Vo",
+            "Go",
+            "rZo",
+            "P",
+            "ZQo",
+            "so",
+            "po",
+            "Ao",
+            "Bo",
+            "Mce",
+            "jo",
+            "fn",
+            "P7e",
+            "Nn",
+            "U0",
+            "xQ",
+            "S1",
+            "Dn",
+            "re",
+            "d",
+            "Zo",
+            "Cn",
+            "Po",
+            "Qo",
+            "ae",
+            "Fr",
+            "m1e",
+            "_o",
+            "gn",
+            "T_t",
+            "un",
+            "Zn",
+            "hn",
+            "Gn",
+            "ur",
+            "jn",
+            "rJr",
+            "R7",
+            "meta",
+            "Ri",
+            "ys",
+            "Cr",
+            "Dd",
+            "t",
+            "Io",
+            "rr",
+            "BEo",
+            "er",
+            "fs",
+            "sr",
+            "bk",
+            "Pr",
+            "SFr",
+            "fo",
+            "dr",
+            "zZ",
+            "tr",
+            "Mc",
+            "Z_",
+            "Nr",
+            "hr",
+            "nr",
+            "Math",
+            "Do",
+            "qo",
+            "Kn",
+            "$dt",
+            "Promise",
+            "Wn",
+            "CCt",
+            "An",
+            "Uce",
+            "r_",
+            "ir",
+            "pie",
+            "Or",
+            "or",
+            "vCt",
+            "K$",
+            "i",
+            "Object",
+            "pe",
+            "Ze",
+            "kCt",
+            "fkt",
+            "g7r",
+            "y7r",
+            "Yar",
+            "c",
+            "ns",
+            "Ir",
+            "k2",
+            "u$e",
+            "rie",
+            "fr",
+            "Jn",
+            "Boolean",
+            "vs",
+            "WI",
+            "S",
+            "U8",
+            "Ka",
+            "IE",
+            "vw",
+            "Ioe",
+            "wRe",
+            "CPt",
+            "i7t",
+            "SYt",
+            "_Yt",
+            "nj",
+            "LAe",
+            "Is",
+            "aG",
+            "gT",
+            "kbt",
+            "z_e",
+            "vct",
+            "G$",
+            "ND",
+            "_c",
+            "eS",
+            "NAe",
+            "LTn",
+            "TTn",
+            "ATn",
+            "xn",
+            "q",
+            "PC",
+            "$ce",
+            "Lys",
+            "Dys",
+            "Oys",
+            "kRe",
+            "$a",
+            "oFn",
+            "iwo",
+            "I",
+            "ro",
+            "ve",
+            "N_e",
+            "OTn",
+            "OAe",
+            "_G",
+            "Sr",
+            "Zlt",
+            "oHn",
+            "rHn",
+            "sHn",
+            "kFe",
+            "QA",
+            "bU",
+            "Pao",
+            "qft",
+            "Qge",
+            "Dyo",
+            "oee",
+            "Iao",
+            "PIt",
+            "Ln",
+            "w2e",
+            "M4e",
+            "FEo",
+            "q6",
+            "$n",
+            "QO",
+            "Ye",
+            "Error",
+            "Lr",
+            "NLe",
+            "koe",
+            "G7r",
+            "$ft",
+            "bRe",
+            "Rn",
+            "H$e"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "return{reconnectMcpServer:$n,toggleMcpServer:Rn}",
+              "after": "return{reconnectMcpServer:async(...args)=>{let result=await $n(...args);await globalThis[Symbol.for(\"edualc.sdk\")].sdkMcpReconnect(xn,args[0]);return result},toggleMcpServer:async(...args)=>{let result=await Rn(...args);await globalThis[Symbol.for(\"edualc.sdk\")].sdkMcpChanged(xn);return result}}"
+            }
+          ]
+        },
+        {
+          "hash": "98eccfc91704c6cedaf9aee4d04eafcf4545f6adcdbd9380c197edbb38500348",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "WMe",
+            "h",
+            "x",
+            "L",
+            "H",
+            "Z",
+            "On",
+            "ne",
+            "Se",
+            "Me",
+            "Ce",
+            "zc",
+            "Le",
+            "b4t",
+            "Be",
+            "sK",
+            "$e",
+            "hqe",
+            "Ve",
+            "A",
+            "Ge",
+            "et",
+            "y",
+            "lt",
+            "St",
+            "Pt",
+            "_t",
+            "K",
+            "co",
+            "GHo",
+            "xt",
+            "QHo",
+            "Mt",
+            "It",
+            "dn",
+            "Ht",
+            "Map",
+            "Zt",
+            "qt",
+            "so",
+            "oo",
+            "io",
+            "ao",
+            "_o",
+            "To",
+            "go",
+            "vo",
+            "xo",
+            "Set",
+            "Bo",
+            "Uo",
+            "cn",
+            "Ops",
+            "P",
+            "Rps",
+            "ro",
+            "Mo",
+            "Eo",
+            "Yo",
+            "gfe",
+            "yn",
+            "xn",
+            "det",
+            "Hn",
+            "T0",
+            "Oee",
+            "LB",
+            "Sn",
+            "se",
+            "d",
+            "sn",
+            "Rn",
+            "Wo",
+            "Ho",
+            "le",
+            "Dr",
+            "Ije",
+            "Oo",
+            "Pn",
+            "ovt",
+            "Fo",
+            "Qn",
+            "cr",
+            "rr",
+            "zn",
+            "or",
+            "smo",
+            "Hee",
+            "meta",
+            "Gi",
+            "Ss",
+            "Ar",
+            "$d",
+            "t",
+            "ko",
+            "es",
+            "KHo",
+            "Kn",
+            "Nr",
+            "wr",
+            "rC",
+            "_r",
+            "K6r",
+            "yo",
+            "$r",
+            "cne",
+            "ar",
+            "Yc",
+            "OS",
+            "pr",
+            "Pr",
+            "ir",
+            "Math",
+            "ns",
+            "cs",
+            "nr",
+            "Pgt",
+            "Promise",
+            "In",
+            "Sxt",
+            "Jn",
+            "Wpe",
+            "B_",
+            "Vn",
+            "Cle",
+            "sr",
+            "jn",
+            "yxt",
+            "d1",
+            "i",
+            "Object",
+            "de",
+            "Ze",
+            "_xt",
+            "VRt",
+            "Yio",
+            "Jio",
+            "zhr",
+            "c",
+            "Mr",
+            "Jr",
+            "fz",
+            "x1e",
+            "Kle",
+            "ur",
+            "fr",
+            "Boolean",
+            "fs",
+            "TO",
+            "S",
+            "RX",
+            "ol",
+            "wUe",
+            "ywt",
+            "XMt",
+            "Inn",
+            "cln",
+            "dln",
+            "bW",
+            "VPe",
+            "hi",
+            "Nz",
+            "dA",
+            "Gkt",
+            "Zwe",
+            "tgt",
+            "w1",
+            "ML",
+            "Oc",
+            "MS",
+            "KPe",
+            "TNn",
+            "hNn",
+            "yNn",
+            "Zo",
+            "V",
+            "dC",
+            "jpe",
+            "HIs",
+            "MIs",
+            "PIs",
+            "UMe",
+            "Ja",
+            "b2n",
+            "dxo",
+            "I",
+            "uo",
+            "ke",
+            "Dwe",
+            "ENn",
+            "NPe",
+            "Zz",
+            "yr",
+            "$pt",
+            "Dqn",
+            "Rgt",
+            "Lqn",
+            "Gle",
+            "BR",
+            "VH",
+            "YMo",
+            "Swt",
+            "rue",
+            "QIo",
+            "tne",
+            "XMo",
+            "fDt",
+            "vn",
+            "j6e",
+            "sYe",
+            "VHo",
+            "MK",
+            "Un",
+            "DM",
+            "Je",
+            "Error",
+            "vr",
+            "EUe",
+            "Gie",
+            "nmo",
+            "bwt",
+            "BMe",
+            "wn",
+            "UBe"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "return{reconnectMcpServer:Un,toggleMcpServer:wn}",
+              "after": "return{reconnectMcpServer:async(...args)=>{let result=await Un(...args);await globalThis[Symbol.for(\"edualc.sdk\")].sdkMcpReconnect(Zo,args[0]);return result},toggleMcpServer:async(...args)=>{let result=await wn(...args);await globalThis[Symbol.for(\"edualc.sdk\")].sdkMcpChanged(xn);return result}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "goal-clear",
+      "selectors": [
+        {
+          "hash": "412ceb0c106595b8d25c1eff2d39e7a793246df5bb13088bd10c88982ca079f5",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "Vft",
+            "t",
+            "e",
+            "q",
+            "r",
+            "KBe",
+            "o",
+            "s",
+            "n",
+            "Qee",
+            "gIr",
+            "i",
+            "S"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "i(\"tengu_stop_hook_removed\",{via:S(\"goal\")}),o",
+              "after": "i(\"tengu_stop_hook_removed\",{via:S(\"goal\")}),globalThis[Symbol.for(\"edualc.sdk\")].sdkGoalCleared(t),o"
+            }
+          ]
+        },
+        {
+          "hash": "412ceb0c106595b8d25c1eff2d39e7a793246df5bb13088bd10c88982ca079f5",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "Kyt",
+            "t",
+            "e",
+            "V",
+            "r",
+            "oGe",
+            "o",
+            "s",
+            "n",
+            "$ne",
+            "lUr",
+            "i",
+            "S"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "i(\"tengu_stop_hook_removed\",{via:S(\"goal\")}),o",
+              "after": "i(\"tengu_stop_hook_removed\",{via:S(\"goal\")}),globalThis[Symbol.for(\"edualc.sdk\")].sdkGoalCleared(t),o"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "task-update",
+      "selectors": [
+        {
+          "hash": "d32267024ec82152c16f1d308b6efffddb3d39a301b0169b1dc64d6e33a5043f",
+          "kind": 220,
+          "topLevel": false,
+          "identifiers": [
+            "h",
+            "f",
+            "D",
+            "e",
+            "S",
+            "r",
+            "o",
+            "Un",
+            "i",
+            "Yu",
+            "zs",
+            "s",
+            "h3n",
+            "BY"
+          ],
+          "moduleMarkers": [
+            "webFetchSavedFiles"
+          ],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "let S=r(f);if(S===f)return h;if(o=Un(f,S)",
+              "after": "let S=r(f);if(S===f)return h;globalThis[Symbol.for(\"edualc.sdk\")].sdkTaskUpdated(e,f,S);if(o=Un(f,S)"
+            }
+          ]
+        },
+        {
+          "hash": "d32267024ec82152c16f1d308b6efffddb3d39a301b0169b1dc64d6e33a5043f",
+          "kind": 220,
+          "topLevel": false,
+          "identifiers": [
+            "h",
+            "f",
+            "V",
+            "e",
+            "S",
+            "r",
+            "o",
+            "Ao",
+            "i",
+            "hp",
+            "is",
+            "s",
+            "QJn",
+            "w7"
+          ],
+          "moduleMarkers": [
+            "webFetchSavedFiles"
+          ],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "let S=r(f);if(S===f)return h;if(o=Ao(f,S)",
+              "after": "let S=r(f);if(S===f)return h;globalThis[Symbol.for(\"edualc.sdk\")].sdkTaskUpdated(e,f,S);if(o=Ao(f,S)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "compact-history",
+      "selectors": [
+        {
+          "hash": "fff0e28fd160e47f88c5f143fe7a87e5f229579708ba9ec744007b1acb1aa45a",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "eo",
+            "e",
+            "n",
+            "o",
+            "u",
+            "s",
+            "v",
+            "h",
+            "C",
+            "b",
+            "A",
+            "T",
+            "V",
+            "L",
+            "D",
+            "B",
+            "G",
+            "z",
+            "ce",
+            "J",
+            "r",
+            "Jen",
+            "ye",
+            "kjt",
+            "w",
+            "O",
+            "TJ",
+            "E4",
+            "ne",
+            "QLe",
+            "qd",
+            "m",
+            "DA",
+            "Xt",
+            "$y",
+            "Ee",
+            "Bt",
+            "yT",
+            "Dxt",
+            "R",
+            "fo",
+            "N",
+            "U",
+            "rEe",
+            "zte",
+            "u7t",
+            "AT",
+            "ze",
+            "Boolean",
+            "Ae",
+            "fG",
+            "Ze",
+            "Promise",
+            "f",
+            "E",
+            "g",
+            "H",
+            "M",
+            "y",
+            "be",
+            "String",
+            "Cie",
+            "gu",
+            "P",
+            "Ywe",
+            "bo",
+            "Ve",
+            "t",
+            "Error",
+            "l",
+            "Ye",
+            "F",
+            "Ft",
+            "EKe",
+            "Ct",
+            "ngr",
+            "bwe",
+            "va",
+            "qe",
+            "Date",
+            "Q",
+            "yU",
+            "rIt",
+            "At",
+            "p",
+            "HXn",
+            "So",
+            "to",
+            "i",
+            "n1n",
+            "Lae",
+            "p0t",
+            "Tt",
+            "DB",
+            "ee",
+            "Fy",
+            "Y",
+            "re",
+            "W",
+            "le",
+            "cDn",
+            "K",
+            "X",
+            "LM",
+            "qKe",
+            "en",
+            "we",
+            "ge",
+            "Ak",
+            "te",
+            "zt",
+            "pU",
+            "tt",
+            "YD",
+            "ixt",
+            "It",
+            "Qte",
+            "JT",
+            "mC"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "return rIt(Q),{messages:Q,shouldQuery:!1,command:r}",
+              "after": "return rIt(Q),globalThis[Symbol.for(\"edualc.sdk\")].alignSdkHistory(o.session.id,Q),{messages:Q,shouldQuery:!1,command:r}"
+            }
+          ]
+        },
+        {
+          "hash": "2b4b68600d5b84bdd317a02bad524286cfddba841bb15c38aeb4322fc5f2ee41",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "lo",
+            "e",
+            "n",
+            "o",
+            "u",
+            "s",
+            "T",
+            "h",
+            "y",
+            "w",
+            "I",
+            "v",
+            "L",
+            "D",
+            "F",
+            "W",
+            "X",
+            "ne",
+            "Se",
+            "ee",
+            "r",
+            "Esn",
+            "ge",
+            "z6t",
+            "b",
+            "H",
+            "cZ",
+            "o9",
+            "ae",
+            "$$e",
+            "Ld",
+            "m",
+            "IR",
+            "Jt",
+            "E_",
+            "Ne",
+            "$t",
+            "uA",
+            "_0t",
+            "U",
+            "yo",
+            "Q",
+            "B",
+            "tke",
+            "Lre",
+            "$tn",
+            "vA",
+            "Ze",
+            "Boolean",
+            "Pe",
+            "Wz",
+            "ot",
+            "Promise",
+            "f",
+            "O",
+            "g",
+            "j",
+            "A",
+            "C",
+            "Ee",
+            "String",
+            "gle",
+            "$u",
+            "P",
+            "Kve",
+            "Lo",
+            "Ke",
+            "t",
+            "Error",
+            "l",
+            "Je",
+            "N",
+            "Ut",
+            "w4e",
+            "Rt",
+            "Jkr",
+            "Gme",
+            "vi",
+            "Qe",
+            "Date",
+            "G",
+            "H1",
+            "MHt",
+            "Nt",
+            "p",
+            "Por",
+            "Yr",
+            "mo",
+            "i",
+            "Tzn",
+            "Ude",
+            "eFt",
+            "Dt",
+            "g1",
+            "te",
+            "w_",
+            "le",
+            "x",
+            "K",
+            "ce",
+            "TBn",
+            "Y",
+            "se",
+            "RH",
+            "o5e",
+            "tn",
+            "$e",
+            "he",
+            "cC",
+            "ue",
+            "no",
+            "I1",
+            "rt",
+            "$L",
+            "PMt",
+            "Ht",
+            "Vre",
+            "JA",
+            "XC"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "return MHt(G),{messages:G,shouldQuery:!1,command:r}",
+              "after": "return MHt(G),globalThis[Symbol.for(\"edualc.sdk\")].alignSdkHistory(o.session.id,G),{messages:G,shouldQuery:!1,command:r}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "relaunch-env",
+      "selectors": [
+        {
+          "hash": "62355e737f9ad7cd0f51dc42a86d9aadf1670408aaa9d8983e97c9f1df7a84ab",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "CQ",
+            "e",
+            "r",
+            "Yq",
+            "i",
+            "n",
+            "WE",
+            "J4",
+            "Wc",
+            "X_e",
+            "a",
+            "s",
+            "h",
+            "q",
+            "u",
+            "XJt",
+            "Vxe",
+            "_wr",
+            "Promise",
+            "Lt",
+            "Ou",
+            "XSt",
+            "Kne",
+            "W$e",
+            "o",
+            "process",
+            "TAn",
+            "Qgo",
+            "c7r",
+            "cP",
+            "rTe",
+            "Object",
+            "Rns",
+            "MCt",
+            "RAn",
+            "q4t",
+            "FTt",
+            "X4t",
+            "Y4t",
+            "xPn",
+            "PPn",
+            "f",
+            "qAn",
+            "g",
+            "kAn",
+            "p",
+            "PAn",
+            "R",
+            "CAn",
+            "c",
+            "C",
+            "t",
+            "UV",
+            "L",
+            "D",
+            "q_",
+            "I"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "Object.assign(o,qAn())",
+              "after": "Object.assign(o,qAn(),globalThis[Symbol.for(\"edualc.sdk\")].relaunchEnvironment())"
+            }
+          ]
+        },
+        {
+          "hash": "450910222033392d0c32cb235b9f7e7ec6c034caa375a138f4e3df732b36d8b7",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "gK",
+            "e",
+            "r",
+            "XP",
+            "i",
+            "n",
+            "bv",
+            "W9",
+            "au",
+            "Kbe",
+            "a",
+            "s",
+            "A",
+            "V",
+            "u",
+            "C",
+            "Ss",
+            "Trn",
+            "yOe",
+            "nIr",
+            "Promise",
+            "Nt",
+            "iu",
+            "fkt",
+            "Voe",
+            "YBe",
+            "o",
+            "Vgt",
+            "process",
+            "POn",
+            "HPo",
+            "Sio",
+            "QP",
+            "kRe",
+            "Object",
+            "Yms",
+            "uPt",
+            "OOn",
+            "wXt",
+            "xPt",
+            "vXt",
+            "EXt",
+            "PHn",
+            "IHn",
+            "f",
+            "V0n",
+            "_",
+            "ROn",
+            "p",
+            "HOn",
+            "h",
+            "xOn",
+            "c",
+            "I",
+            "t",
+            "mq",
+            "v",
+            "P",
+            "Ow",
+            "y"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "Object.assign(o,V0n())",
+              "after": "Object.assign(o,V0n(),globalThis[Symbol.for(\"edualc.sdk\")].relaunchEnvironment())"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "daemon-name",
+      "selectors": [
+        {
+          "hash": "cf8afdd4738659021ca56e72e20538582ef45dad78f8ed3a6dbe1bdb47bbe2a7",
+          "kind": 11,
+          "topLevel": true,
+          "identifiers": [],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "\"com.anthropic.claude-daemon\"",
+              "after": "\"com.sudy-super.edualc-daemon\""
+            }
+          ]
+        },
+        {
+          "hash": "cf8afdd4738659021ca56e72e20538582ef45dad78f8ed3a6dbe1bdb47bbe2a7",
+          "kind": 11,
+          "topLevel": true,
+          "identifiers": [],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "\"com.anthropic.claude-daemon\"",
+              "after": "\"com.sudy-super.edualc-daemon\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "background:mQt",
+      "selectors": [
+        {
+          "hash": "621c4fba60a8343f69ea73e18f09dd3f0e59f2d9824216fe97b4e72406507ba4",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "mQt",
+            "e",
+            "Gp",
+            "Boolean",
+            "En",
+            "Uwr"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "{",
+              "after": "{let _edualcTask=globalThis[Symbol.for(\"edualc.sdk\")].sdkTaskCanBackground(e);if(_edualcTask!==void 0)return _edualcTask;"
+            }
+          ]
+        },
+        {
+          "hash": "621c4fba60a8343f69ea73e18f09dd3f0e59f2d9824216fe97b4e72406507ba4",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "zrn",
+            "e",
+            "Kp",
+            "Boolean",
+            "Cn",
+            "CIr"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "{",
+              "after": "{let _edualcTask=globalThis[Symbol.for(\"edualc.sdk\")].sdkTaskCanBackground(e);if(_edualcTask!==void 0)return _edualcTask;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "background:Ydt",
+      "selectors": [
+        {
+          "hash": "f69108520f475c576ee50070ec3bc8c0df368b9a78c93694c317c22b00668cec",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "Ydt",
+            "e",
+            "n",
+            "r",
+            "s",
+            "Gp",
+            "JFn"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "{let s=n.get(e);",
+              "after": "{let s=n.get(e);if(globalThis[Symbol.for(\"edualc.sdk\")].sdkBackgroundTask(s,n))return!0;"
+            }
+          ]
+        },
+        {
+          "hash": "f69108520f475c576ee50070ec3bc8c0df368b9a78c93694c317c22b00668cec",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "jft",
+            "e",
+            "n",
+            "r",
+            "s",
+            "Kp",
+            "hGn"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "{let s=n.get(e);",
+              "after": "{let s=n.get(e);if(globalThis[Symbol.for(\"edualc.sdk\")].sdkBackgroundTask(s,n))return!0;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "background:t4e",
+      "selectors": [
+        {
+          "hash": "66b964942b3fde6172d5e2094ede3cdaa7e9aa3a9f9a5e9a3f2772a9058d08ee",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "t4e",
+            "e",
+            "n",
+            "r",
+            "s",
+            "En",
+            "zs",
+            "Wbe",
+            "h",
+            "uRt",
+            "b",
+            "y",
+            "Vn"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "{let s=n.get(e);",
+              "after": "{let s=n.get(e);if(globalThis[Symbol.for(\"edualc.sdk\")].sdkBackgroundTask(s,n))return!0;"
+            }
+          ]
+        },
+        {
+          "hash": "66b964942b3fde6172d5e2094ede3cdaa7e9aa3a9f9a5e9a3f2772a9058d08ee",
+          "kind": 263,
+          "topLevel": true,
+          "identifiers": [
+            "I8e",
+            "e",
+            "n",
+            "r",
+            "s",
+            "Cn",
+            "is",
+            "tve",
+            "h",
+            "sPt",
+            "b",
+            "y",
+            "Wn"
+          ],
+          "moduleMarkers": [],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "{let s=n.get(e);",
+              "after": "{let s=n.get(e);if(globalThis[Symbol.for(\"edualc.sdk\")].sdkBackgroundTask(s,n))return!0;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fork:chunk-emqg0p7z.js",
+      "selectors": [
+        {
+          "hash": "8735ffdc42065e93d5f1d741b6f84b98b233036407c27f66543e2ca09b188f39",
+          "kind": 214,
+          "topLevel": false,
+          "identifiers": [
+            "UA",
+            "Ae",
+            "h",
+            "r",
+            "o"
+          ],
+          "moduleMarkers": [
+            "Away summary cannot use tools"
+          ],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "UA(",
+              "after": "globalThis[Symbol.for(\"edualc.sdk\")].sdkToolFreeFork("
+            }
+          ]
+        },
+        {
+          "hash": "8735ffdc42065e93d5f1d741b6f84b98b233036407c27f66543e2ca09b188f39",
+          "kind": 214,
+          "topLevel": false,
+          "identifiers": [
+            "HR",
+            "Pe",
+            "h",
+            "r",
+            "o"
+          ],
+          "moduleMarkers": [
+            "Away summary cannot use tools"
+          ],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "HR(",
+              "after": "globalThis[Symbol.for(\"edualc.sdk\")].sdkToolFreeFork("
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fork:chunk-b6hzxg02.js",
+      "selectors": [
+        {
+          "hash": "a5e7f0933fcb50ca93be076f0c1233ae3a610bc970a8a9a667f07e49c5ae8d09",
+          "kind": 214,
+          "topLevel": false,
+          "identifiers": [
+            "UA",
+            "Ae",
+            "e",
+            "t",
+            "o",
+            "n"
+          ],
+          "moduleMarkers": [
+            "No tools needed for suggestion"
+          ],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "UA(",
+              "after": "globalThis[Symbol.for(\"edualc.sdk\")].sdkToolFreeFork("
+            }
+          ]
+        },
+        {
+          "hash": "a5e7f0933fcb50ca93be076f0c1233ae3a610bc970a8a9a667f07e49c5ae8d09",
+          "kind": 214,
+          "topLevel": false,
+          "identifiers": [
+            "HR",
+            "Pe",
+            "e",
+            "t",
+            "o",
+            "n"
+          ],
+          "moduleMarkers": [
+            "No tools needed for suggestion"
+          ],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "HR(",
+              "after": "globalThis[Symbol.for(\"edualc.sdk\")].sdkToolFreeFork("
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fork:chunk-swjk3jdr.js",
+      "selectors": [
+        {
+          "hash": "6e483cf6294cca3a946d28504665320329ef0c66fe53dc5e7ca7862d69d12b75",
+          "kind": 214,
+          "topLevel": false,
+          "identifiers": [
+            "UA",
+            "Ae",
+            "p",
+            "e",
+            "o"
+          ],
+          "moduleMarkers": [
+            "Session name generation cannot use tools"
+          ],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "UA(",
+              "after": "globalThis[Symbol.for(\"edualc.sdk\")].sdkToolFreeFork("
+            }
+          ]
+        },
+        {
+          "hash": "6e483cf6294cca3a946d28504665320329ef0c66fe53dc5e7ca7862d69d12b75",
+          "kind": 214,
+          "topLevel": false,
+          "identifiers": [
+            "HR",
+            "Pe",
+            "p",
+            "e",
+            "o"
+          ],
+          "moduleMarkers": [
+            "Session name generation cannot use tools"
+          ],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "HR(",
+              "after": "globalThis[Symbol.for(\"edualc.sdk\")].sdkToolFreeFork("
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fork:chunk-1svntv7y.js",
+      "selectors": [
+        {
+          "hash": "b44dd89cad70d34438623a644802a15565aa93114317c59fcc11e2a56c11f24a",
+          "kind": 214,
+          "topLevel": false,
+          "identifiers": [
+            "nwe",
+            "bi",
+            "jd",
+            "e",
+            "ni",
+            "n",
+            "h",
+            "r",
+            "s",
+            "Kd"
+          ],
+          "moduleMarkers": [
+            "No tools needed for summary"
+          ],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "nwe(",
+              "after": "globalThis[Symbol.for(\"edualc.sdk\")].sdkToolFreeFork("
+            }
+          ]
+        },
+        {
+          "hash": "b44dd89cad70d34438623a644802a15565aa93114317c59fcc11e2a56c11f24a",
+          "kind": 214,
+          "topLevel": false,
+          "identifiers": [
+            "uve",
+            "Mi",
+            "Yd",
+            "e",
+            "di",
+            "n",
+            "A",
+            "s",
+            "r",
+            "Qd"
+          ],
+          "moduleMarkers": [
+            "No tools needed for summary"
+          ],
+          "operations": [
+            {
+              "mode": "text",
+              "before": "uve(",
+              "after": "globalThis[Symbol.for(\"edualc.sdk\")].sdkToolFreeFork("
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

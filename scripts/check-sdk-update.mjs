@@ -31,6 +31,7 @@ const server = createServer(async (request, response) => {
     if (request.url.includes('count_tokens')) { response.setHeader('content-type', 'application/json'); response.end('{"input_tokens":100}'); return; }
     if (!request.url.split('?')[0].endsWith('/messages')) { response.setHeader('content-type', 'application/json'); response.end('{}'); return; }
     requests.push({ phase, model: body.model });
+    if (phase === 'probe-auth') { response.statusCode = 401; response.setHeader('content-type', 'application/json'); response.end(JSON.stringify({ type: 'error', error: { type: 'authentication_error', message: 'fixture key rejected' } })); return; }
     const tool = phase === 'approval' && !toolSent;
     if (tool) toolSent = true;
     const text = phase === 'title' ? '{"title":"SDK_UPDATE_TITLE_OK"}' : phase === 'compact' ? 'The user asked to remember SDK_UPDATE_MEMORY_1769. Preserve that code.' : phase === 'side' ? 'SDK_UPDATE_SIDE_OK' : 'SDK_UPDATE_REPLY_OK';
@@ -61,10 +62,12 @@ async function* inputs() {
 }
 async function turn(text, clientComposed = true) {
   const result = new Promise((resolveResult, reject) => { waitResult = { resolve: resolveResult, reject }; });
-  queued.push({ type: 'user', uuid: randomUUID(), parent_tool_use_id: null, message: { role: 'user', content: text }, ...(clientComposed ? { client_composed: true } : {}) });
+  const uuid = randomUUID();
+  queued.push({ type: 'user', uuid, parent_tool_use_id: null, message: { role: 'user', content: text }, ...(clientComposed ? { client_composed: true } : {}) });
   wakeInput?.(); wakeInput = undefined;
   const message = await result;
   assert.equal(message.subtype, 'success', JSON.stringify(message));
+  assert((message.user_message_uuids ?? [message.user_message_uuid]).includes(uuid), 'SDK result did not identify the submitted prompt');
   return message;
 }
 let pump;
@@ -94,8 +97,9 @@ try {
   connection = sdk.query({ prompt: inputs(), options: {
     pathToClaudeCodeExecutable: resolve(executable), cwd: temporary,
     env: environment, settingSources: [], strictMcpConfig: true, mcpServers: {},
-    settings: { disableAllHooks: true }, tools: ['Write'], permissionMode: 'default',
+    settings: { disableAllHooks: true }, tools: ['Write'], permissionMode: 'default', allowDangerouslySkipPermissions: true,
     persistSession: true, includePartialMessages: true, model: 'claude-sonnet-5',
+    perTaskStopAffordance: true,
     systemPrompt: 'Answer briefly. Use Write only when requested.', abortController: controller,
     canUseTool: async (name, input) => {
       assert.equal(name, 'Write'); assert.equal(input.file_path, outputFile);
@@ -117,6 +121,25 @@ try {
   await connection.initializationResult();
   assert.equal((await turn('Remember SDK_UPDATE_MEMORY_1769')).result, 'SDK_UPDATE_REPLY_OK');
   checks.push('conversation');
+  const context = await connection.getContextUsage();
+  for (const name of ['categories', 'gridRows', 'memoryFiles', 'mcpTools', 'agents']) assert(Array.isArray(context[name]), `Missing SDK context ${name}`);
+  if (context.skills !== undefined) assert(Array.isArray(context.skills.skillFrontmatter), 'Missing SDK skill context');
+  assert(Number.isFinite(context.totalTokens) && Number.isFinite(context.maxTokens));
+  assert.equal(context.model, 'claude-sonnet-5');
+  checks.push('getContextUsage with native rendering data');
+  await connection.setPermissionMode('bypassPermissions');
+  await connection.setPermissionMode('default');
+  checks.push('native-authorized permission mode switching');
+  assert.equal(typeof connection.stopTask, 'function');
+  assert.equal(typeof connection.toggleMcpServer, 'function');
+  assert.equal(typeof connection.reconnectMcpServer, 'function');
+  assert.deepEqual(await connection.mcpServerStatus(), []);
+  await connection.applyFlagSettings({ fastMode: false, autoCompactWindow: null });
+  checks.push('SDK task stop and live session settings controls');
+  const beforeCommands = requests.length;
+  await turn('/goal clear', false);
+  assert.equal(requests.length, beforeCommands);
+  checks.push('goal clear without generation');
   phase = 'approval';
   await turn(`Write SDK_UPDATE_WRITE_OK to ${outputFile}`);
   assert.equal(approvalCount, 1);
@@ -148,6 +171,22 @@ try {
   assert(history.includes('SDK_UPDATE_MEMORY_1769'));
   assert(history.includes('compact_boundary'));
   checks.push('persisted conversation and compact history');
+  phase = 'probe-auth';
+  const probe = sdk.query({ prompt: 'Hi', options: {
+    pathToClaudeCodeExecutable: resolve(executable), cwd: temporary,
+    env: { ...environment, CLAUDE_CODE_MAX_OUTPUT_TOKENS: '1', CLAUDE_CODE_MAX_RETRIES: '0' },
+    model: 'claude-sonnet-5', systemPrompt: [], verbatimPrompts: true, tools: [],
+    settingSources: [], strictMcpConfig: true, mcpServers: {}, settings: { disableAllHooks: true },
+    maxTurns: 1, persistSession: false, abortController: controller,
+  } });
+  try {
+    let rejectedStatus;
+    try {
+      for await (const event of probe) if (event.type === 'assistant' || event.type === 'result') rejectedStatus = event.api_error_status ?? rejectedStatus;
+    } catch (error) { if (rejectedStatus !== 401) throw error; }
+    assert.equal(rejectedStatus, 401);
+    checks.push('model probe API status preservation');
+  } finally { probe.close(); }
   console.log(JSON.stringify({ pass: true, checks, requests: requests.length }));
 } catch (error) {
   console.error(JSON.stringify({ pass: false, checks, error: error.stack ?? String(error) }));
